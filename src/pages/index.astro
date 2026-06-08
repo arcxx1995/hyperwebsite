@@ -183,6 +183,8 @@ const weeks = [
     { name: 'Lovable',     slug: 'lovable',     color: 'ffffff', url: 'https://lovable.dev/favicon.ico' },
     { name: 'Codex',       slug: 'codex',       color: 'ffffff', url: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg' },
     { name: 'Higgsfield',  slug: 'higgsfield',  color: 'ffffff', url: 'https://higgsfield.ai/favicon.ico' },
+    { name: 'Antigravity', slug: 'antigravity', color: 'ffffff', url: '/logos/antigravity.png' },
+    { name: 'Stitch',      slug: 'stitch',      color: 'ffffff', url: 'https://stitch.withgoogle.com/favicon.ico' },
   ];
   return (
     <div class="marquee-section">
@@ -197,6 +199,7 @@ const weeks = [
                 width="24"
                 height="24"
                 class="marquee-logo marquee-logo--brand"
+                onerror="this.style.display='none'"
               />
               <span class="marquee-item-name">{t.name}</span>
             </li>
@@ -225,17 +228,19 @@ const weeks = [
     { name: 'GitLab',      slug: 'gitlab',      color: 'FC6D26' },
     { name: 'Automattic',  slug: 'automattic',  color: '3499CD' },
     { name: 'Toptal',      slug: 'toptal',      color: '3863A0' },
-    { name: 'Buffer',      slug: 'buffer',      color: 'ffffff' },
     { name: 'Webflow',     slug: 'webflow',     color: '146EF5' },
-    { name: 'HubSpot',     slug: 'hubspot',     color: 'FF7A59' },
-    { name: 'Loom',        slug: 'loom',        color: '625DF5' },
-    { name: 'Miro',        slug: 'miro',        color: 'FFD02F' },
     { name: 'Atlassian',   slug: 'atlassian',   color: '0052CC' },
-    { name: 'Zapier',      slug: 'zapier',      color: 'FF4A00' },
-    { name: 'Stripe',      slug: 'stripe',      color: '635BFF' },
-    { name: 'Linear',      slug: 'linear',      color: '5E6AD2' },
-    { name: 'Figma',       slug: 'figma',       color: 'F24E1E' },
     { name: 'Todoist',     slug: 'todoist',     color: 'DB4035' },
+    { name: 'Razorpay',    slug: 'razorpay',    color: '3395FF' },
+    { name: 'Pocket FM',   slug: 'pocketfm',    color: 'ffffff', url: '/logos/pocketfm.png' },
+    { name: 'Lenskart',    slug: 'lenskart',    color: 'ffffff', url: '/logos/lenskart.jpeg' },
+    { name: 'CRED',        slug: 'cred',        color: 'ffffff', url: '/logos/cred.png'     },
+    { name: 'Plum',        slug: 'plum',        color: 'ffffff', url: '/logos/plum.png'     },
+    { name: 'Puma',        slug: 'puma',        color: 'ffffff' },
+    { name: 'Postman',     slug: 'postman',     color: 'FF6C37' },
+    { name: 'BookMyShow',  slug: 'bookmyshow',  color: 'E6163B' },
+    { name: 'Swiggy',      slug: 'swiggy',      color: 'FC8019' },
+    { name: 'TCS',         slug: 'tcs',         color: '0033A1' },
   ];
   return (
     <div class="marquee-section marquee-section--companies">
@@ -250,6 +255,7 @@ const weeks = [
                 width="24"
                 height="24"
                 class="marquee-logo marquee-logo--brand"
+                onerror="this.style.display='none'"
               />
               <span class="marquee-item-name">{c.name}</span>
             </li>
@@ -266,9 +272,8 @@ const weeks = [
   <!-- Heading block with image bg -->
   <div class="honest-hero">
     <img src="/hero-bg.png" alt="" class="honest-hero-img" aria-hidden="true">
-    <div class="container honest-hero-content">
-      <h2 id="problem-heading" class="honest-heading">The World Changed.<br>Nobody Told You.</h2>
-    </div>
+    <p class="honest-text honest-text--a" aria-hidden="true">The World Changed.</p>
+    <h2 id="problem-heading" class="honest-text honest-text--b">Nobody Told You.</h2>
   </div>
 
   <!-- Stats, quote, realities -->
@@ -355,37 +360,37 @@ const weeks = [
         num: '01', title: 'The Marketer',
         voice: '"I have ideas but I depend on developers to build them."',
         help: 'You stop depending on dev teams. Build landing pages, automate campaigns, and ship ideas the same week you have them.',
-        img: 'https://picsum.photos/seed/hs-marketer/720/900'
+        img: '/themarketer.png'
       },
       {
         num: '02', title: 'The Non-Technical Founder',
         voice: '"I have a startup idea but no co-founder and no budget."',
         help: 'You become your own CTO. Ship your MVP in Week 5, iterate on real user feedback, and raise your first round with a live product in hand.',
-        img: 'https://picsum.photos/seed/hs-founder/720/900'
+        img: '/thenontechnicalfounder.png'
       },
       {
         num: '03', title: 'The Career Switcher',
         voice: '"I want to break into tech without a 4-year degree."',
         help: 'You build 4 portfolio products, rewrite your LinkedIn from scratch, and get warm intros to remote hiring partners in Week 7.',
-        img: 'https://picsum.photos/seed/hs-career/720/900'
+        img: '/thecareerswitcher.png'
       },
       {
         num: '04', title: 'The Freelancer',
         voice: '"I want to offer AI product-building as a service."',
         help: 'You add AI product-building to your service list. Charge 3 times more. Build client tools in days. Deliver what agencies quote months for.',
-        img: 'https://picsum.photos/seed/hs-freelance/720/900'
+        img: '/thefreelancer.png'
       },
       {
-        num: '05', title: 'The Business Analyst',
+        num: '05', title: 'The Analyst',
         voice: '"I want to automate everything I do manually."',
         help: 'You automate your workflows in Week 6. Build internal tools your team actually uses. Stop waiting on dev resources for every small request.',
-        img: 'https://picsum.photos/seed/hs-analyst/720/900'
+        img: '/thebusinessanalyst.png'
       },
       {
-        num: '06', title: 'The Dreamer',
-        voice: '"I just want to build something I\'m genuinely proud of."',
-        help: 'You ship the thing you\'ve been talking about for years. Live URL. Real users. Your name on it.',
-        img: 'https://picsum.photos/seed/hs-dreamer/720/900'
+        num: '06', title: 'The Content Creator',
+        voice: '"I talk about AI tools constantly. I want to actually build them."',
+        help: 'You go from reviewer to builder. Ship the tools your audience has been asking for. Add a product layer to your content business. Own the thing you used to just recommend.',
+        img: '/thecontentcreator.png'
       },
     ].map((p, i) => (
       <div class="audience-slide" data-slide={i}>

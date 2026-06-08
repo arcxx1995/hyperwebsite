@@ -1,0 +1,9 @@
+:root {
+  --honest-a-x: 40%;
+  --honest-a-y: 45%;
+  --honest-a-size: clamp(0.75rem, 2vw, 2rem);
+
+  --honest-b-x: 63%;
+  --honest-b-y: 45%;
+  --honest-b-size: clamp(0.75rem, 2vw, 2rem);
+}
