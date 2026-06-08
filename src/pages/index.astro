@@ -88,7 +88,7 @@ const weeks = [
 <!-- NAV -->
 <header class="nav" id="nav" role="banner">
   <div class="nav-inner container">
-    <a href="/" class="nav-logo" aria-label="Hyperspark Studio home">HYPERSPARK STUDIO</a>
+    <a href="/" class="nav-logo" aria-label=">hyperspark home">&gt;hyperspark</a>
     <nav class="nav-links" aria-label="Site navigation">
       <a href="#curriculum">Curriculum</a>
       <a href="#mentors">Mentors</a>
@@ -110,8 +110,7 @@ const weeks = [
     poster="/hero-poster.svg"
     aria-hidden="true"
   >
-    <source src="/hero-bg.mp4" type="video/mp4" />
-    <source src="/hero-bg.webm" type="video/webm" />
+    <source src="/hero-vid.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
@@ -199,9 +198,17 @@ const weeks = [
 
 <!-- PROBLEM: THE HONEST TRUTH -->
 <section class="section-honest" aria-labelledby="problem-heading">
-  <div class="container">
 
-    <h2 id="problem-heading" class="honest-heading">The World Changed.<br>Nobody Told You.</h2>
+  <!-- Heading block with image bg -->
+  <div class="honest-hero">
+    <img src="/hero-bg.png" alt="" class="honest-hero-img" aria-hidden="true">
+    <div class="container honest-hero-content">
+      <h2 id="problem-heading" class="honest-heading">The World Changed.<br>Nobody Told You.</h2>
+    </div>
+  </div>
+
+  <!-- Stats, quote, realities -->
+  <div class="container honest-content">
 
     <!-- Big stats strip -->
     <div class="honest-stats">
@@ -720,7 +727,7 @@ const weeks = [
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="nav-logo">HYPERSPARK STUDIO</a>
+        <a href="/" class="nav-logo">&gt;hyperspark</a>
         <p>Building the next generation of AI-native product creators, one cohort at a time.</p>
       </div>
       <div class="footer-col">
