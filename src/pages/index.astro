@@ -159,7 +159,7 @@ const weeks = [
 {(() => {
   const tools = [
     { name: 'Claude',      slug: 'anthropic',  color: 'ffffff' },
-    { name: 'Claude Code', slug: 'anthropic',  color: 'ffffff' },
+    { name: 'Claude Code', slug: 'claude',      color: 'ffffff' },
     { name: 'Cursor',      slug: 'cursor',     color: 'ffffff' },
     { name: 'v0',          slug: 'vercel',     color: 'ffffff' },
     { name: 'Bolt',        slug: 'stackblitz', color: '1269D3' },
@@ -174,8 +174,15 @@ const weeks = [
     { name: 'GitHub',      slug: 'github',     color: 'ffffff' },
     { name: 'Railway',     slug: 'railway',    color: 'ffffff' },
     { name: 'Notion',      slug: 'notion',     color: 'ffffff' },
-    { name: 'Linear',      slug: 'linear',     color: '5E6AD2' },
-    { name: 'Webflow',     slug: 'webflow',    color: '146EF5' },
+    { name: 'Linear',      slug: 'linear',      color: '5E6AD2' },
+    { name: 'Webflow',     slug: 'webflow',     color: '146EF5' },
+    { name: 'Ollama',      slug: 'ollama',      color: 'ffffff'  },
+    { name: 'Hugging Face',slug: 'huggingface', color: 'FFD21E'  },
+    { name: 'OpenRouter',  slug: 'openrouter',  color: '6467F2'  },
+    { name: 'Replit',      slug: 'replit',      color: 'F26207'  },
+    { name: 'Lovable',     slug: 'lovable',     color: 'ffffff', url: 'https://lovable.dev/favicon.ico' },
+    { name: 'Codex',       slug: 'codex',       color: 'ffffff', url: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg' },
+    { name: 'Higgsfield',  slug: 'higgsfield',  color: 'ffffff', url: 'https://higgsfield.ai/favicon.ico' },
   ];
   return (
     <div class="marquee-section">
@@ -185,7 +192,7 @@ const weeks = [
           {[...tools, ...tools].map((t, i) => (
             <li class="marquee-item marquee-item--logo-only" key={i}>
               <img
-                src={`https://cdn.simpleicons.org/${t.slug}/${t.color}`}
+                src={t.url ?? `https://cdn.simpleicons.org/${t.slug}/${t.color}`}
                 alt={t.name}
                 width="24"
                 height="24"
@@ -224,7 +231,6 @@ const weeks = [
     { name: 'Loom',        slug: 'loom',        color: '625DF5' },
     { name: 'Miro',        slug: 'miro',        color: 'FFD02F' },
     { name: 'Atlassian',   slug: 'atlassian',   color: '0052CC' },
-    { name: 'Canva',       slug: 'canva',       color: '00C4CC' },
     { name: 'Zapier',      slug: 'zapier',      color: 'FF4A00' },
     { name: 'Stripe',      slug: 'stripe',      color: '635BFF' },
     { name: 'Linear',      slug: 'linear',      color: '5E6AD2' },
@@ -239,7 +245,7 @@ const weeks = [
           {[...companies, ...companies].map((c, i) => (
             <li class="marquee-item marquee-item--logo-only" key={i}>
               <img
-                src={`https://cdn.simpleicons.org/${c.slug}/${c.color}`}
+                src={c.url ?? `https://cdn.simpleicons.org/${c.slug}/${c.color}`}
                 alt={c.name}
                 width="24"
                 height="24"
