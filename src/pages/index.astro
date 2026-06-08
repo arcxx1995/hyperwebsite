@@ -157,13 +157,43 @@ const weeks = [
 
 <!-- TOOLS MARQUEE -->
 {(() => {
-  const tools = ['Claude', 'Claude Code', 'Cursor', 'v0', 'Bolt', 'Supabase', 'Vercel', 'Stripe', 'n8n', 'Zapier', 'Make', 'Figma', 'Framer', 'GitHub', 'Railway', 'Notion', 'Linear', 'Webflow'];
+  const tools = [
+    { name: 'Claude',      slug: 'anthropic',  color: 'ffffff' },
+    { name: 'Claude Code', slug: 'anthropic',  color: 'ffffff' },
+    { name: 'Cursor',      slug: 'cursor',     color: 'ffffff' },
+    { name: 'v0',          slug: 'vercel',     color: 'ffffff' },
+    { name: 'Bolt',        slug: 'stackblitz', color: '1269D3' },
+    { name: 'Supabase',    slug: 'supabase',   color: '3FCF8E' },
+    { name: 'Vercel',      slug: 'vercel',     color: 'ffffff' },
+    { name: 'Stripe',      slug: 'stripe',     color: '635BFF' },
+    { name: 'n8n',         slug: 'n8n',        color: 'EA4B71' },
+    { name: 'Zapier',      slug: 'zapier',     color: 'FF4A00' },
+    { name: 'Make',        slug: 'make',       color: '6D00CC' },
+    { name: 'Figma',       slug: 'figma',      color: 'F24E1E' },
+    { name: 'Framer',      slug: 'framer',     color: '0055FF' },
+    { name: 'GitHub',      slug: 'github',     color: 'ffffff' },
+    { name: 'Railway',     slug: 'railway',    color: 'ffffff' },
+    { name: 'Notion',      slug: 'notion',     color: 'ffffff' },
+    { name: 'Linear',      slug: 'linear',     color: '5E6AD2' },
+    { name: 'Webflow',     slug: 'webflow',    color: '146EF5' },
+  ];
   return (
     <div class="marquee-section">
       <p class="marquee-label">Tools You Will Learn</p>
       <div class="marquee" aria-hidden="true">
         <ul class="marquee-track">
-          {[...tools, ...tools].map((t) => <li class="marquee-item">{t}</li>)}
+          {[...tools, ...tools].map((t, i) => (
+            <li class="marquee-item marquee-item--logo-only" key={i}>
+              <img
+                src={`https://cdn.simpleicons.org/${t.slug}/${t.color}`}
+                alt={t.name}
+                width="24"
+                height="24"
+                class="marquee-logo marquee-logo--brand"
+              />
+              <span class="marquee-item-name">{t.name}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -183,13 +213,41 @@ const weeks = [
 
 <!-- COMPANIES MARQUEE -->
 {(() => {
-  const companies = ['Shopify', 'GitLab', 'Automattic', 'Toptal', 'Deel', 'Buffer', 'Webflow', 'Basecamp', 'HubSpot', 'Loom', 'Doist', 'Miro', 'Atlassian', 'Canva', 'Typeform', 'Remote.com'];
+  const companies = [
+    { name: 'Shopify',     slug: 'shopify',     color: '96BF48' },
+    { name: 'GitLab',      slug: 'gitlab',      color: 'FC6D26' },
+    { name: 'Automattic',  slug: 'automattic',  color: '3499CD' },
+    { name: 'Toptal',      slug: 'toptal',      color: '3863A0' },
+    { name: 'Buffer',      slug: 'buffer',      color: 'ffffff' },
+    { name: 'Webflow',     slug: 'webflow',     color: '146EF5' },
+    { name: 'HubSpot',     slug: 'hubspot',     color: 'FF7A59' },
+    { name: 'Loom',        slug: 'loom',        color: '625DF5' },
+    { name: 'Miro',        slug: 'miro',        color: 'FFD02F' },
+    { name: 'Atlassian',   slug: 'atlassian',   color: '0052CC' },
+    { name: 'Canva',       slug: 'canva',       color: '00C4CC' },
+    { name: 'Zapier',      slug: 'zapier',      color: 'FF4A00' },
+    { name: 'Stripe',      slug: 'stripe',      color: '635BFF' },
+    { name: 'Linear',      slug: 'linear',      color: '5E6AD2' },
+    { name: 'Figma',       slug: 'figma',       color: 'F24E1E' },
+    { name: 'Todoist',     slug: 'todoist',     color: 'DB4035' },
+  ];
   return (
     <div class="marquee-section marquee-section--companies">
       <p class="marquee-label">Where Our Students Work</p>
       <div class="marquee" aria-hidden="true">
         <ul class="marquee-track marquee-track--reverse">
-          {[...companies, ...companies].map((c) => <li class="marquee-item">{c}</li>)}
+          {[...companies, ...companies].map((c, i) => (
+            <li class="marquee-item marquee-item--logo-only" key={i}>
+              <img
+                src={`https://cdn.simpleicons.org/${c.slug}/${c.color}`}
+                alt={c.name}
+                width="24"
+                height="24"
+                class="marquee-logo marquee-logo--brand"
+              />
+              <span class="marquee-item-name">{c.name}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
