@@ -1,4 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="oklch(0.35 0.22 270)"/>
-  <path d="M18 6L10 18h7l-3 8 12-14h-8l2-6z" fill="oklch(0.96 0.004 270)" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="18" fill="#130b22"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="16.5" stroke="#f4f1ff" stroke-opacity="0.18" stroke-width="3"/>
+  <text
+    x="50%"
+    y="52%"
+    fill="#f4f1ff"
+    font-family="'Geist Mono Variable', 'Courier New', monospace"
+    font-size="28"
+    font-weight="700"
+    letter-spacing="-1"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >&gt;h</text>
 </svg>

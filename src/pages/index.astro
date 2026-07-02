@@ -3,99 +3,96 @@ import Layout from '../layouts/Layout.astro';
 
 const weeks = [
   {
-    week: 'WK 01', title: 'Think Like a Builder', tag: 'Foundation',
+    week: 'PH 01', title: 'Founder Brief', tag: 'Discovery',
     points: [
-      'How to think in systems, not syntax',
-      'Introduction to the Agentic Workflow framework',
-      'Setting up your full dev environment in one session',
-      'Claude Mastery 101: talking to AI like a senior engineer',
-      'Project: a personal webpage, live on the internet',
+      'Clarify the product thesis, market, users, and launch constraints',
+      'Separate must-have MVP scope from expensive distractions',
+      'Map the technical risks before a sprint starts',
+      'Define the first usable version your customers can touch',
     ],
   },
   {
-    week: 'WK 02', title: 'The AI-First Development Mindset', tag: 'Foundation',
+    week: 'PH 02', title: 'Product Architecture', tag: 'Planning',
     points: [
-      'Prompt engineering for builders, not chatbots',
-      'Token efficiency, context management, and memory patterns',
-      'Introduction to Claude Code and the terminal',
-      'Design basics: visual hierarchy, spacing, color systems',
-      "Project: your first web app — a working tool you'll actually use",
+      'Choose the right stack for speed today and scale tomorrow',
+      'Plan data models, APIs, authentication, payments, and deployment',
+      'Design the handoff between web, mobile, and AI systems',
+      'Build a delivery roadmap with clear weekly milestones',
     ],
   },
   {
-    week: 'WK 03', title: 'Full Agentic Stack Development', tag: 'Core Skills',
+    week: 'PH 03', title: 'Interface System', tag: 'Design',
     points: [
-      'What an Agentic Workflow is and why it changes everything',
-      'Building with Claude Code end-to-end',
-      'File systems, APIs, databases — explained for non-coders',
-      'Working with open-source AI tools',
-      'Project: a complete full-stack CRUD application',
+      'Shape the product experience around your first real workflows',
+      'Create a design system that makes the MVP feel funded',
+      'Prototype key screens for web, iOS, Android, and admin surfaces',
+      'Stress-test the UX before engineering time is spent',
     ],
   },
   {
-    week: 'WK 04', title: 'Generative AI & Design Mastery', tag: 'Core Skills',
+    week: 'PH 04', title: 'Core Build Sprint', tag: 'Engineering',
     points: [
-      'Generative AI integration: images, text, voice',
-      'UI/UX design with AI tools — Figma, v0, Framer',
-      'Building beautiful interfaces without knowing CSS',
-      'Project: a fully designed, AI-powered content tool',
+      'Ship the web app, native app, dashboard, or marketplace core',
+      'Implement auth, databases, subscriptions, notifications, and analytics',
+      'Keep founders close to weekly demos and decision points',
+      'Maintain a production-grade codebase from the first commit',
     ],
   },
   {
-    week: 'WK 05', title: 'Products That Make Money', tag: 'Build',
+    week: 'PH 05', title: 'AI & LLM Integration', tag: 'Intelligence',
     points: [
-      'SaaS architecture for non-technical builders',
-      'Payment integration with Stripe — zero backend code',
-      'User authentication and accounts',
-      'Project: a monetizable micro-SaaS, live and accepting payments',
+      'Add LLM workflows where they create real product leverage',
+      'Build chat, copilots, document intelligence, agents, and automations',
+      'Connect model outputs to product state, permissions, and audit trails',
+      'Evaluate latency, cost, reliability, and safety before launch',
     ],
   },
   {
-    week: 'WK 06', title: 'Automations & Agentic Systems', tag: 'Build',
+    week: 'PH 06', title: 'QA, Analytics & Hardening', tag: 'Reliability',
     points: [
-      'Marketing automation pipelines',
-      'Building AI agents that work while you sleep',
-      'Connecting apps, workflows, and data without code',
-      'n8n, Zapier, and custom agent builds with Claude',
-      'Project: a complete business automation system',
+      'Test the critical user paths across devices and roles',
+      'Instrument product analytics, event tracking, and error visibility',
+      'Review security, permissions, rate limits, and payment edge cases',
+      'Prepare the release branch, rollback plan, and launch checklist',
     ],
   },
   {
-    week: 'WK 07', title: 'Portfolio, Brand & LinkedIn', tag: 'Ship',
+    week: 'PH 07', title: 'Launch Support', tag: 'Release',
     points: [
-      'Building a portfolio that makes hiring managers stop scrolling',
-      'Resume writing for the AI-builder era',
-      'LinkedIn optimization: the exact profile structure that gets inbound',
-      'Cold outreach scripts that convert for remote roles',
-      'Project: complete portfolio with 4+ live products',
+      'Deploy the product to production with a clean launch path',
+      'Support App Store, Play Store, Vercel, cloud, and domain setup',
+      'Create the website, onboarding, emails, and operational flows',
+      'Stay close during the first user wave and fix what reality reveals',
     ],
   },
   {
-    week: 'WK 08', title: 'Land the Job or Launch the Product', tag: 'Grow',
+    week: 'PH 08', title: 'Founder Engineering Team', tag: 'Scale',
     points: [
-      'Interview prep for remote product and AI builder roles',
-      'How to price and sell your skills as a freelancer',
-      'Launching your product to your first 100 users',
-      'Building in public and leveraging your cohort network',
-      'Final Showcase: live demo to mentors and industry guests',
+      'Iterate on customer feedback after the MVP is live',
+      'Plan v2 features, integrations, and growth experiments',
+      'Handle ongoing engineering velocity without hiring too early',
+      'Become the technical team founders can keep building with',
     ],
   },
 ];
 ---
 
-<Layout title="Hyperspark Studio — Build AI Products. Land Remote Jobs.">
+<Layout
+  title="Hyperspark Studio — Development Studio for Founders"
+  description="Hyperspark Studio is a development studio for founders building MVPs, websites, iOS and Android apps, web apps, and AI-native products."
+>
 
 <!-- NAV -->
 <header class="nav" id="nav" role="banner">
   <div class="nav-inner container">
     <a href="/" class="nav-logo" aria-label=">hyperspark home">&gt;hyperspark</a>
     <nav class="nav-links" aria-label="Site navigation">
-      <a href="#curriculum">Curriculum</a>
-      <a href="#mentors">Mentors</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey-pin">Process</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#pricing" class="btn btn-primary nav-cta">Apply for Cohort →</a>
+    <a href="/start" class="btn btn-primary nav-cta">Start a Build →</a>
   </div>
 </header>
 
@@ -116,39 +113,39 @@ const weeks = [
   <div class="container">
     <div class="hero-content">
       <div class="hero-badge">
-        <span>Cohort 01 · Now Open</span>
-        <span class="badge-seats">Only 8 Seats</span>
+        <span>Development Studio for Founders</span>
+        <span class="badge-seats">MVP to Scale</span>
       </div>
 
       <h1 id="hero-heading">
-        You've Never Written<br>
-        A Single Line of Code.<br>
-        <em>That's Exactly Why You're Here.</em>
+        Founders Don't Need<br>
+        Advice. They Need It<br>
+        <em>Shipped.</em>
       </h1>
 
       <p class="hero-sub">
-        Hyperspark Studio turns complete beginners into AI-powered builders who ship real products, build a portfolio that commands attention, and land remote jobs that pay like senior engineers.
+        Hyperspark Studio builds websites, iOS and Android apps, native web apps, and AI-native products — senior engineers who own the build end to end, not a junior bench you have to manage yourself.
       </p>
 
       <div class="hero-ctas">
-        <a href="#pricing" class="btn btn-primary btn-lg">Claim Your Seat →</a>
-        <a href="#curriculum" class="btn btn-ghost btn-lg">View Curriculum</a>
+        <a href="/start" class="btn btn-primary btn-lg">Discuss Your MVP →</a>
+        <a href="#projects" class="btn btn-ghost btn-lg">View Project Types</a>
       </div>
 
-      <div class="hero-stats" role="list" aria-label="Program highlights">
+      <div class="hero-stats" role="list" aria-label="Studio highlights">
         <div class="stat" role="listitem">
-          <span class="stat-value">&lt; 9 Students</span>
-          <span class="stat-label">Per Cohort</span>
+          <span class="stat-value">3Mn+</span>
+          <span class="stat-label">Users Reached</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat" role="listitem">
-          <span class="stat-value">5× Claude Max</span>
-          <span class="stat-label">Included Free</span>
+          <span class="stat-value">10Mn+</span>
+          <span class="stat-label">Revenue Generated</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat" role="listitem">
-          <span class="stat-value">8 Weeks</span>
-          <span class="stat-label">To First Product</span>
+          <span class="stat-value">26+</span>
+          <span class="stat-label">Apps Worked On</span>
         </div>
       </div>
     </div>
@@ -163,6 +160,19 @@ const weeks = [
     { name: 'Cursor',      slug: 'cursor',     color: 'ffffff' },
     { name: 'v0',          slug: 'vercel',     color: 'ffffff' },
     { name: 'Bolt',        slug: 'stackblitz', color: '1269D3' },
+    { name: 'Next.js',     slug: 'nextdotjs',  color: 'ffffff' },
+    { name: 'React',       slug: 'react',      color: '61DAFB' },
+    { name: 'React Native',slug: 'react',      color: '61DAFB' },
+    { name: 'iOS',         slug: 'apple',      color: 'ffffff' },
+    { name: 'Android',     slug: 'android',    color: '3DDC84' },
+    { name: 'TypeScript',  slug: 'typescript', color: '3178C6' },
+    { name: 'Node.js',     slug: 'nodedotjs',  color: '5FA04E' },
+    { name: 'MongoDB',     slug: 'mongodb',    color: '47A248' },
+    { name: 'Postgres',    slug: 'postgresql', color: '4169E1' },
+    { name: 'Redis',       slug: 'redis',      color: 'FF4438' },
+    { name: 'Docker',      slug: 'docker',     color: '2496ED' },
+    { name: 'Prisma',      slug: 'prisma',     color: 'ffffff' },
+    { name: 'Tailwind',    slug: 'tailwindcss', color: '06B6D4' },
     { name: 'Supabase',    slug: 'supabase',   color: '3FCF8E' },
     { name: 'Vercel',      slug: 'vercel',     color: 'ffffff' },
     { name: 'Stripe',      slug: 'stripe',     color: '635BFF' },
@@ -184,11 +194,10 @@ const weeks = [
     { name: 'Codex',       slug: 'codex',       color: 'ffffff', url: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg' },
     { name: 'Higgsfield',  slug: 'higgsfield',  color: 'ffffff', url: 'https://higgsfield.ai/favicon.ico' },
     { name: 'Antigravity', slug: 'antigravity', color: 'ffffff', url: '/logos/antigravity.png' },
-    { name: 'Stitch',      slug: 'stitch',      color: 'ffffff', url: 'https://stitch.withgoogle.com/favicon.ico' },
   ];
   return (
     <div class="marquee-section">
-      <p class="marquee-label">Tools You Will Learn</p>
+      <p class="marquee-label">Stacks We Build With</p>
       <div class="marquee" aria-hidden="true">
         <ul class="marquee-track">
           {[...tools, ...tools].map((t, i) => (
@@ -214,9 +223,9 @@ const weeks = [
 <section class="monologue-section">
   <div class="container">
     <p class="monologue-text" data-reveal>
-      Every tool in that row is built to let non-engineers ship production software.<br>
-      The companies below are actively hiring people who know how to use them.<br>
-      <em>In eight weeks, you will.</em>
+      Every founder has hired a vendor who vanished after the invoice.<br>
+      We stay until the product works, and stay after that too.<br>
+      <em>That is the only pitch we make.</em>
     </p>
   </div>
 </section>
@@ -244,7 +253,7 @@ const weeks = [
   ];
   return (
     <div class="marquee-section marquee-section--companies">
-      <p class="marquee-label">Where Our Students Work</p>
+      <p class="marquee-label">Experience Around High-Scale Products</p>
       <div class="marquee" aria-hidden="true">
         <ul class="marquee-track marquee-track--reverse">
           {[...companies, ...companies].map((c, i) => (
@@ -272,8 +281,8 @@ const weeks = [
   <!-- Heading block with image bg -->
   <div class="honest-hero">
     <img src="/hero-bg.png" alt="" class="honest-hero-img" aria-hidden="true">
-    <p class="honest-text honest-text--a" aria-hidden="true">The World Changed.</p>
-    <h2 id="problem-heading" class="honest-text honest-text--b">Nobody Told You.</h2>
+    <p class="honest-text honest-text--a" aria-hidden="true">The Hard Part</p>
+    <h2 id="problem-heading" class="honest-text honest-text--b">Is Building.</h2>
   </div>
 
   <!-- Stats, quote, realities -->
@@ -282,25 +291,25 @@ const weeks = [
     <!-- Big stats strip -->
     <div class="honest-stats">
       <div class="honest-stat">
-        <span class="honest-num">97M</span>
-        <span class="honest-stat-desc">New AI-related roles projected globally by 2025 — World Economic Forum</span>
+        <span class="honest-num">3<span class="honest-num-suffix">Mn+</span></span>
+        <span class="honest-stat-desc">Users reached by products and software our engineers have worked on</span>
       </div>
       <div class="honest-stat-rule" aria-hidden="true"></div>
       <div class="honest-stat">
-        <span class="honest-num">€4.5K</span>
-        <span class="honest-stat-desc">Average monthly salary for remote AI builder roles — no CS degree required</span>
+        <span class="honest-num">10<span class="honest-num-suffix">Mn+</span></span>
+        <span class="honest-stat-desc">Revenue generated across apps, product launches, and software systems</span>
       </div>
       <div class="honest-stat-rule" aria-hidden="true"></div>
       <div class="honest-stat">
-        <span class="honest-num">48 hrs</span>
-        <span class="honest-stat-desc">Average time to ship a working SaaS MVP using Claude Code, start to deployed</span>
+        <span class="honest-num">26<span class="honest-num-suffix">+</span></span>
+        <span class="honest-stat-desc">Apps our engineers have worked on across product, launch, growth, and scale</span>
       </div>
     </div>
 
     <!-- Pull quote -->
     <div class="honest-quote-wrap">
       <blockquote class="honest-quote">
-        A 22-year-old with Claude and a weekend just shipped the product your company has been planning for two years.
+        Ambition is never the bottleneck. A serious engineering team that can turn urgency into a shipped product is.
       </blockquote>
     </div>
 
@@ -308,19 +317,19 @@ const weeks = [
     <div class="honest-realities">
       {[
         {
-          idx: '01', cat: 'Disruption',
-          heading: 'The Old\nRésumé Is Dead.',
-          body: 'Hiring managers now look for shipped products, not degrees. A portfolio of live AI tools gets you in the room a CS degree never would.'
+          idx: '01', cat: 'Founder Risk',
+          heading: 'Ideas Do Not\nDe-Risk Themselves.',
+          body: 'A pitch deck buys you a meeting. Working software buys you users. We take the product thesis from slide to shipped, fast.'
         },
         {
-          idx: '02', cat: 'Opportunity',
-          heading: 'Remote Jobs Pay\nGlobal. Cost Local.',
-          body: 'A €4,500/month remote role changes everything when you live in Bangalore, Bali, or Baroda. The opportunity is real. The skillset is learnable.'
+          idx: '02', cat: 'Execution',
+          heading: 'Speed Without\nFragile Code.',
+          body: 'We move at founder speed without writing throwaway code. Architecture, UX, analytics, and deployment get built right the first time, not fixed twice.'
         },
         {
-          idx: '03', cat: 'Access',
-          heading: 'The Barrier Is\nAccess. Not Ability.',
-          body: 'You just never had someone to show you the right way to build. Eight weeks from now, you will have the portfolio to prove it.'
+          idx: '03', cat: 'Team',
+          heading: 'Founders Need\nTechnical Leverage.',
+          body: 'Stop managing scattered freelancers across time zones. Get one engineering team that owns web, mobile, AI, and the launch, end to end.'
         },
       ].map((r) => (
         <div class="reality-row">
@@ -343,13 +352,43 @@ const weeks = [
   </div>
 </section>
 
-<!-- AUDIENCE: WHO THIS IS FOR -->
-<section class="audience-section" aria-labelledby="audience-heading">
+<!-- SERVICES -->
+<section class="build-section" id="services" aria-labelledby="build-heading">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <h2 id="build-heading">A Studio For The Work<br>Founders Actually Need.</h2>
+      <p>We own the surfaces that make or break a launch: brand, product interface, mobile, backend, and AI. No handoffs, no gaps between teams.</p>
+    </div>
+    <div class="build-grid">
+      {[
+        { num: '01', title: 'MVP Development', desc: 'From product brief to usable v1 with real workflows' },
+        { num: '02', title: 'SaaS Platforms', desc: 'Auth, billing, roles, dashboards, and operations' },
+        { num: '03', title: 'iOS / Android Apps', desc: 'Mobile apps with backend, analytics, and store readiness' },
+        { num: '04', title: 'Native Web Apps', desc: 'Fast, app-like products built for repeated use' },
+        { num: '05', title: 'AI / LLM Features', desc: 'Chat, agents, RAG, copilots, and model integrations' },
+        { num: '06', title: 'Internal Tools', desc: 'Admin panels, CRMs, automations, and workflows' },
+        { num: '07', title: 'Websites', desc: 'Premium sites that explain, convert, and launch' },
+        { num: '08', title: 'Scale Support', desc: 'Ongoing engineering after your MVP meets users' },
+      ].map((item, i) => (
+        <div class="build-item" data-reveal data-reveal-delay={String((i % 4) + 1)}>
+          <span class="build-num" aria-hidden="true">{item.num}</span>
+          <div>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="audience-section" id="projects" aria-labelledby="audience-heading">
   <div class="audience-pin" id="audience-pin">
 
     <!-- Left: permanently positioned heading column (absolute, no grid/flex parent) -->
     <div class="audience-heading-col">
-      <h2 id="audience-heading">Built For<br>The Person<br>Who Has Never<br>Written<br>Hello World.</h2>
+      <h2 id="audience-heading">Products<br>we have<br>worked on.</h2>
       <div class="audience-slide-counter"><span class="aud-cur">01</span> / 06</div>
     </div>
 
@@ -357,40 +396,52 @@ const weeks = [
     <div class="audience-stage">
     {[
       {
-        num: '01', title: 'The Marketer',
-        voice: '"I have ideas but I depend on developers to build them."',
-        help: 'You stop depending on dev teams. Build landing pages, automate campaigns, and ship ideas the same week you have them.',
-        img: '/themarketer.png'
+        num: '01', title: 'Tiimo',
+        voice: 'Visual planning app for neurodivergent minds — now Apple\'s App of the Year.',
+        userBase: '500K+ users, 50K+ subscribers',
+        revenue: 'Apple iPhone App of the Year, 2025',
+        help: 'iOS app development for a neuroinclusive planning experience, focused on mobile workflows, daily structure, reminders, and an interaction model precise enough to win Apple\'s top award.',
+        img: '/tiimo.png'
       },
       {
-        num: '02', title: 'The Non-Technical Founder',
-        voice: '"I have a startup idea but no co-founder and no budget."',
-        help: 'You become your own CTO. Ship your MVP in Week 5, iterate on real user feedback, and raise your first round with a live product in hand.',
-        img: '/thenontechnicalfounder.png'
+        num: '02', title: 'Bird',
+        voice: 'Customer communications infrastructure moving message volume most platforms never touch.',
+        userBase: '15K+ enterprise customers',
+        revenue: '$900M est. revenue',
+        help: 'Software development across communication workflows, backend product systems, and integrations for a company that carries roughly 40% of the world\'s commercial messaging volume, by its own count.',
+        img: '/bird.png'
       },
       {
-        num: '03', title: 'The Career Switcher',
-        voice: '"I want to break into tech without a 4-year degree."',
-        help: 'You build 4 portfolio products, rewrite your LinkedIn from scratch, and get warm intros to remote hiring partners in Week 7.',
-        img: '/thecareerswitcher.png'
+        num: '03', title: 'Openverse',
+        voice: 'Search engine for openly licensed media — one of the largest open-content databases on the web.',
+        userBase: '800M+ media items indexed',
+        revenue: '$0 open-source',
+        help: 'Platform development for discovery, search, and public web infrastructure around one of the largest open-media catalogues in existence, stewarded by Automattic.',
+        img: '/openverse.png'
       },
       {
-        num: '04', title: 'The Freelancer',
-        voice: '"I want to offer AI product-building as a service."',
-        help: 'You add AI product-building to your service list. Charge 3 times more. Build client tools in days. Deliver what agencies quote months for.',
-        img: '/thefreelancer.png'
+        num: '04', title: 'Equals',
+        voice: 'AI-native spreadsheet and analytics platform for business teams.',
+        userBase: 'Notion, Zeta, Levity among customers',
+        revenue: '$16M Series A, led by a16z',
+        help: 'Platform development for analytics workflows, dashboard experiences, and reporting systems for a company backed by a16z, dbt Labs\' founder, and Slack\'s former CPO.',
+        img: '/equals.png'
       },
       {
-        num: '05', title: 'The Analyst',
-        voice: '"I want to automate everything I do manually."',
-        help: 'You automate your workflows in Week 6. Build internal tools your team actually uses. Stop waiting on dev resources for every small request.',
-        img: '/thebusinessanalyst.png'
+        num: '05', title: 'Stash',
+        voice: 'Direct-to-consumer commerce platform for game developers.',
+        userBase: '$35M raised (as Fractal, 2022)',
+        revenue: '40% checkout conversion lift',
+        help: 'Platform development for game commerce, player-facing web flows, and one-tap checkout systems, for a platform partnered with Adyen that powers titles like Warhammer 40,000: Tacticus to a 75% repeat purchase rate.',
+        img: '/stash.png'
       },
       {
-        num: '06', title: 'The Content Creator',
-        voice: '"I talk about AI tools constantly. I want to actually build them."',
-        help: 'You go from reviewer to builder. Ship the tools your audience has been asking for. Add a product layer to your content business. Own the thing you used to just recommend.',
-        img: '/thecontentcreator.png'
+        num: '06', title: 'Samply',
+        voice: 'Mobile-first product for simple sampling and discovery.',
+        userBase: 'Public data unavailable',
+        revenue: 'Undisclosed',
+        help: 'Product and app development for a polished consumer experience, focused on smooth onboarding, clear discovery flows, and reliable everyday interactions.',
+        img: '/samply.png'
       },
     ].map((p, i) => (
       <div class="audience-slide" data-slide={i}>
@@ -399,8 +450,12 @@ const weeks = [
             <span class="slide-num">{p.num} / 06</span>
             <h3 class="slide-title">{p.title}</h3>
             <p class="slide-voice">{p.voice}</p>
+            <div class="slide-meta-tabs" aria-label={`${p.title} product metrics`}>
+              <span class="slide-meta-tab">User base: {p.userBase}</span>
+              <span class="slide-meta-tab">Generated revenue: {p.revenue}</span>
+            </div>
             <div class="slide-help">
-              <span class="slide-help-label">With Hyperspark</span>
+              <span class="slide-help-label">What We Built</span>
               <p class="slide-help-body">{p.help}</p>
             </div>
           </div>
@@ -428,44 +483,14 @@ const weeks = [
   </div>
 </section>
 
-<!-- WHAT YOU'LL BUILD -->
-<section class="build-section" aria-labelledby="build-heading">
-  <div class="container">
-    <div class="section-header" data-reveal>
-      <h2 id="build-heading">Not a Certificate.<br>A Portfolio of Real Things.</h2>
-      <p>By the time you graduate, you'll have shipped products people can actually use.</p>
-    </div>
-    <div class="build-grid">
-      {[
-        { num: '01', title: 'Web Applications', desc: 'Full-stack apps real users can interact with' },
-        { num: '02', title: 'SaaS Products', desc: 'Subscription tools that generate recurring revenue' },
-        { num: '03', title: 'Mobile-Ready Sites', desc: 'For clients or your own brand, on every device' },
-        { num: '04', title: 'Automations', desc: 'Business workflows that run without you' },
-        { num: '05', title: 'AI Agents', desc: 'Agentic systems built with Claude' },
-        { num: '06', title: 'Browser Games', desc: 'Fully playable, shareable, yours' },
-        { num: '07', title: 'Marketing Funnels', desc: 'Landing pages that convert, not just look good' },
-        { num: '08', title: 'Your Startup MVP', desc: 'The idea you\'ve had for two years, finally shipped' },
-      ].map((item, i) => (
-        <div class="build-item" data-reveal data-reveal-delay={String((i % 4) + 1)}>
-          <span class="build-num" aria-hidden="true">{item.num}</span>
-          <div>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- CURRICULUM / JOURNEY MAP -->
+<!-- PROCESS / JOURNEY MAP -->
 <section id="journey-pin" aria-labelledby="journey-heading">
   <div class="journey-inner">
 
     <!-- Left: permanent heading -->
     <div class="journey-left">
-      <h2 id="journey-heading">8<br>Weeks.</h2>
-      <p class="journey-sub">From Zero<br>to Shipped.</p>
+      <h2 id="journey-heading">Build<br>Process.</h2>
+      <p class="journey-sub">From brief<br>to product team.</p>
       <div class="journey-counter" aria-live="polite">
         <span class="journey-cur">01</span><span class="journey-sep"> / 08</span>
       </div>
@@ -488,7 +513,7 @@ const weeks = [
         ))}
       </div>
 
-      <nav class="journey-map" aria-label="Course weeks">
+      <nav class="journey-map" aria-label="Build process phases">
         <div class="journey-path" aria-hidden="true">
           <div class="journey-path-fill"></div>
         </div>
@@ -504,53 +529,58 @@ const weeks = [
   </div>
 </section>
 
-<!-- WHAT'S INCLUDED -->
+<!-- CAPABILITIES -->
 <section aria-labelledby="includes-heading">
   <div class="container">
     <div class="section-header" data-reveal>
-      <h2 id="includes-heading">Everything You Need.<br>Nothing You Don't.</h2>
+      <h2 id="includes-heading">Senior Engineering Depth,<br>Without The Hiring Delay.</h2>
     </div>
     <div class="includes-grid">
       {[
         {
-          title: 'Max 8 Students Per Cohort',
-          desc: 'Intimate, high-accountability learning. Your mentor knows your name and your project.',
+          title: 'Product Strategy Into Scope',
+          desc: 'We turn rough founder ideas into buildable product scopes, milestone plans, and technical priorities.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>`,
         },
         {
-          title: '5× Claude Max Plan',
-          desc: '₹12,000+ worth of Claude credits, gifted to every student. Build without hitting limits.',
+          title: 'Full-Stack Product Engineering',
+          desc: 'Frontend, backend, databases, APIs, deployment, payments, auth, analytics, and production operations.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>`,
         },
         {
-          title: 'Live Weekly Sessions',
-          desc: 'Real-time builds with your cohort. No pre-recorded lectures gathering dust.',
+          title: 'Mobile App Delivery',
+          desc: 'iOS and Android products with mobile UX, push notifications, subscriptions, releases, and backend support.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>`,
         },
         {
-          title: 'Private Cohort Community',
-          desc: 'Your tribe of builders. Accountability partners, feedback loops, and first users for your products.',
+          title: 'AI-Native Systems',
+          desc: 'LLM chat, agents, retrieval, document intelligence, automation pipelines, prompt flows, and model operations.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>`,
         },
         {
-          title: 'Resume + LinkedIn Overhaul',
-          desc: 'We rewrite both from scratch. Optimized for remote hiring managers who see 200 applications a day.',
+          title: 'Premium Website Builds',
+          desc: 'Launch pages, brand sites, marketing funnels, CMS content, docs, and product storytelling that founders can sell with.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>`,
         },
         {
-          title: 'Job Placement Support',
-          desc: 'Warm intros to hiring partners, mock interviews, and offer negotiation coaching included.',
+          title: 'Large Scope Ownership',
+          desc: 'We can take on complex projects with multiple surfaces, integrations, phased releases, and long-running engineering needs.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0"/>`,
         },
         {
-          title: 'Project Code Reviews',
-          desc: 'Senior review on every project you submit. Real feedback from builders, not AI-generated summaries.',
+          title: 'Senior Code Review',
+          desc: 'Experienced engineers review architecture, implementation, edge cases, and long-term maintainability as we build.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>`,
         },
         {
-          title: 'Lifetime Access to Materials',
-          desc: 'All session recordings, templates, and resources stay with you. The curriculum keeps updating.',
+          title: 'Post-Launch Iteration',
+          desc: 'After launch, we help founders respond to users, fix bottlenecks, build v2, and keep engineering velocity alive.',
           icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>`,
+        },
+        {
+          title: 'Infrastructure & DevOps',
+          desc: 'CI/CD, cloud infrastructure, monitoring, and scaling built in from day one, not bolted on after things break.',
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/>`,
         },
       ].map((item, i) => (
         <div class="include-tile" data-reveal data-reveal-delay={String((i % 3) + 1)}>
@@ -567,40 +597,50 @@ const weeks = [
   </div>
 </section>
 
-<!-- MENTORS -->
-<section class="section-surface" id="mentors" aria-labelledby="mentors-heading">
+<!-- TEAM -->
+<section class="section-surface" id="team" aria-labelledby="team-heading">
   <div class="container">
     <div class="section-header" data-reveal>
-      <h2 id="mentors-heading">Taught By Builders,<br>Not Professors.</h2>
-      <p>Every mentor has shipped real products, worked remotely, and built with AI in production.</p>
+      <h2 id="team-heading">Engineers Who Have<br>Seen Scale Up Close.</h2>
+      <p>We are a small team of experienced engineers who have worked on 26+ apps reaching 3Mn+ users and generating more than 10Mn+ in revenue.</p>
     </div>
     <div class="mentors-grid">
       {[
         {
-          initials: 'AK',
-          name: 'Aryan Kapoor',
-          role: 'Lead Mentor · Full-Stack AI Builder',
-          bio: 'Shipped 12 products in 3 years without a CS degree. Built automation systems for three funded startups. Now lives and works fully remote from Lisbon.',
-          tags: ['Claude Code', 'Agentic Systems', 'SaaS'],
+          photo: '/team/cyrus-burns.jpg',
+          name: 'Cyrus Burns',
+          linkedin: 'https://www.linkedin.com/in/cyburns/',
+          role: 'Product Engineering · Web Apps · Backend · SaaS Systems',
+          bio: 'We build the core product layer: architecture, data models, APIs, authentication, billing, dashboards, and deployment.',
+          tags: ['Full-Stack', 'SaaS', 'Architecture'],
         },
         {
-          initials: 'PS',
-          name: 'Priya Sharma',
-          role: 'Design & Generative AI Mentor',
-          bio: 'Ex-marketer turned AI product designer. Built and sold a Generative AI tool for content teams. Teaches the intersection of design and agentic development.',
-          tags: ['Generative AI', 'UI/UX', 'No-Code to Pro-Code'],
+          photo: '/team/arpan-roy-chowdhury.jpg',
+          name: 'Arpan Roy Chowdhury',
+          linkedin: 'https://www.linkedin.com/in/arpanroyc/',
+          role: 'Experience Design · Websites · Mobile UX · Product Interfaces',
+          bio: 'We make early products feel credible and usable, from high-converting websites to app screens founders can confidently demo.',
+          tags: ['UI/UX', 'Websites', 'Mobile'],
         },
         {
-          initials: 'RN',
-          name: 'Rohan Nair',
-          role: 'Automation & Career Mentor',
-          bio: 'Placed 40+ non-technical candidates in remote roles earning $50K–$120K. Specialist in agentic workflow automation and remote career strategy.',
-          tags: ['Automations', 'Remote Careers', 'LinkedIn Growth'],
+          photo: '/team/julia-farson.jpg',
+          name: 'Julia Farson',
+          linkedin: 'https://www.linkedin.com/in/julia-farson-017972129/',
+          role: 'AI Systems · LLM Apps · Agents · Automations',
+          bio: 'We integrate AI where it compounds the product: copilots, retrieval, document workflows, internal automation, and agentic systems.',
+          tags: ['LLMs', 'Agents', 'Automation'],
         },
       ].map((mentor, i) => (
         <div class="mentor-card" data-reveal data-reveal-delay={String(i + 1)}>
-          <div class="mentor-avatar" aria-label={`${mentor.name} avatar`}>{mentor.initials}</div>
-          <h3 class="mentor-name">{mentor.name}</h3>
+          <img class="mentor-avatar" src={mentor.photo} alt={mentor.name} width="64" height="64" loading="lazy" decoding="async" />
+          <div class="mentor-name-row">
+            <h3 class="mentor-name">{mentor.name}</h3>
+            <a href={mentor.linkedin} class="mentor-linkedin" aria-label={`${mentor.name} on LinkedIn`} target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
           <p class="mentor-role">{mentor.role}</p>
           <p class="mentor-bio">{mentor.bio}</p>
           <div class="mentor-tags" role="list" aria-label="Expertise">
@@ -618,36 +658,46 @@ const weeks = [
 <section class="section-violet" aria-labelledby="testimonials-heading">
   <div class="container">
     <div class="section-header" data-reveal>
-      <h2 id="testimonials-heading">What Happens After 8 Weeks</h2>
+      <h2 id="testimonials-heading">Why Founders Bring Us In</h2>
     </div>
     <div class="testimonials-grid">
       {[
         {
-          quote: 'I was a marketing manager with zero coding skills. Eight weeks later I\'d shipped two products and had three remote job offers. The way they teach Claude is unlike anything else.',
-          initials: 'NR',
-          name: 'Neha R.',
-          outcome: 'Now: Remote AI Product Manager, €4,500/mo',
+          quote: 'We needed more than a landing page. Hyperspark helped us turn a vague product thesis into a working MVP with auth, payments, analytics, and a launch site.',
+          photo: '/testimonials/georgi-urumov.jpeg',
+          linkedin: 'https://www.linkedin.com/in/georgi-urumov-95545b4a/',
+          name: 'Georgi Urumov',
+          outcome: 'Co-Founder & CTO, Mentalyc Inc.',
         },
         {
-          quote: 'I had a startup idea for 4 years. Hyperspark helped me ship my MVP in 3 weeks. It\'s now at 200 paying users.',
-          initials: 'SP',
-          name: 'Sameer P.',
-          outcome: 'Now: Founder, SaaS product at $1,400 MRR',
+          quote: 'The team could talk product, design, and engineering in the same conversation. That made the build faster and reduced the number of founder decisions we had to revisit.',
+          photo: '/testimonials/helene-lassen-norlem.jpeg',
+          linkedin: 'https://www.linkedin.com/in/heleneln/',
+          name: 'Helene Lassen Nørlem',
+          outcome: 'Co-Founder & CEO, Tiimo',
         },
         {
-          quote: 'I genuinely thought I was too old and too non-technical. I was wrong. I built things that I\'m genuinely proud of, and I got hired.',
-          initials: 'DM',
-          name: 'Deepa M.',
-          outcome: 'Now: Automation Consultant, fully remote',
+          quote: 'We wanted AI in the product, but not as a gimmick. Hyperspark built the workflow around real user jobs, cost controls, and the places where LLMs actually helped.',
+          photo: '/testimonials/bob-van-ierland.jpeg',
+          linkedin: 'https://www.linkedin.com/in/bob-van-ierland/',
+          name: 'Bob M. van Ierland',
+          outcome: 'Product Manager, Bird',
         },
       ].map((t, i) => (
         <div class="testimonial-card" data-reveal data-reveal-delay={String(i + 1)}>
           <div class="testimonial-mark" aria-hidden="true">"</div>
           <blockquote>{t.quote}</blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-label={`${t.name} avatar`}>{t.initials}</div>
+            <img class="testimonial-avatar" src={t.photo} alt={t.name} width="40" height="40" loading="lazy" decoding="async" />
             <div>
-              <p class="testimonial-name">{t.name}</p>
+              <div class="testimonial-name-row">
+                <p class="testimonial-name">{t.name}</p>
+                <a href={t.linkedin} class="testimonial-linkedin" aria-label={`${t.name} on LinkedIn`} target="_blank" rel="noopener noreferrer">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+              </div>
               <p class="testimonial-outcome">{t.outcome}</p>
             </div>
           </div>
@@ -657,59 +707,79 @@ const weeks = [
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" aria-labelledby="pricing-heading">
+<!-- ENGAGEMENT -->
+<section id="engagement" aria-labelledby="engagement-heading">
   <div class="container">
     <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto var(--s-12);" data-reveal>
-      <h2 id="pricing-heading">One Investment.<br>One Transformation.</h2>
-      <p style="margin: 0 auto;">We keep cohorts small by design. When a seat fills, it's gone.</p>
+      <h2 id="engagement-heading">Bring Us In When<br>The Build Matters.</h2>
+      <p style="margin: 0 auto;">We take on founders building something real: a serious MVP, a product launch, an AI-native system. Not side projects.</p>
     </div>
     <div class="pricing-wrapper" data-reveal data-reveal-delay="1">
-      <div class="pricing-card">
-        <p class="pricing-label">Cohort 01 · Early Access</p>
-
+      <div class="pricing-intro">
+        <p class="pricing-label">Founder Build Engagement</p>
         <div class="pricing-price">
-          <span class="price-main">₹49,999</span>
-          <span class="price-strike">₹74,999</span>
+          <span class="price-main">MVP</span>
+          <span class="price-strike">to scale</span>
         </div>
-        <p class="pricing-note">One-time payment · No hidden fees · No EMI traps</p>
+        <p class="pricing-note">Scoped around your product, timeline, technical risk, and launch goal</p>
+      </div>
 
-        <div class="pricing-divider" aria-hidden="true"></div>
+      <div class="pricing-grid" aria-label="What's included">
+        {[
+          {
+            title: 'Scope & Planning',
+            items: [
+              'Founder brief, product scope, and build roadmap',
+              'Weekly demos, technical decision support, and transparent milestones',
+              'Senior engineering review across architecture and implementation',
+            ],
+          },
+          {
+            title: 'Build',
+            items: [
+              'Websites, web apps, iOS, Android, backend, and admin surfaces',
+              'AI and LLM integrations where they create product leverage',
+              'Capacity for complex, multi-surface, large-scope product builds',
+            ],
+          },
+          {
+            title: 'Launch & Beyond',
+            items: [
+              'Production deployment, analytics, QA, and launch support',
+              'Post-launch iteration so the product improves after real users arrive',
+            ],
+          },
+        ].map((box) => (
+          <div class="pricing-box">
+            <h4 class="pricing-box-title">{box.title}</h4>
+            <ul class="pricing-includes">
+              {box.items.map((item) => (
+                <li>
+                  <svg class="check" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
 
-        <ul class="pricing-includes" aria-label="What's included">
-          {[
-            '8 weeks of live cohort sessions (2× per week)',
-            'Maximum 8 students — your mentor knows your project',
-            '5× Claude Max Plan subscription (worth ₹12,000+)',
-            'Full curriculum: Dev + Design + AI + Automation',
-            'Resume + LinkedIn complete overhaul, from scratch',
-            'Job placement support and warm intros to hiring partners',
-            'Private community with lifetime access',
-            'Senior code review on every project you submit',
-            'Lifetime access to all session recordings and materials',
-          ].map((item) => (
-            <li>
-              <svg class="check" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
-            </li>
-          ))}
-        </ul>
-
+      <div class="pricing-footer">
         <div class="pricing-urgency">
           <span class="urgency-dot" aria-hidden="true"></span>
-          6 of 8 seats claimed for Cohort 01
+          We take on a limited number of founder builds at a time
         </div>
 
-        <a href="mailto:apply@hyperspark.studio" class="btn btn-primary btn-full btn-lg">
-          Claim Your Seat — Apply Now →
+        <a href="/start" class="btn btn-primary btn-full btn-lg">
+          Send Your Product Brief →
         </a>
 
-        <p class="pricing-sub">Application takes 3 minutes. Cohort starts Q3 2025.</p>
+        <p class="pricing-sub">Share the idea, timeline, current stage, and the build you need us to own.</p>
 
         <div class="pricing-guarantee">
-          If you show up, do the work, and still haven't shipped something you're proud of or started your job search, we extend your mentorship at no charge.
+          We are a fit when you want a technical partner, not a task-taker: someone who can challenge scope, design the system, ship the product, and stay close after launch.
         </div>
       </div>
     </div>
@@ -720,41 +790,41 @@ const weeks = [
 <section class="section-surface" id="faq" aria-labelledby="faq-heading">
   <div class="container">
     <div class="section-header" data-reveal>
-      <h2 id="faq-heading">The Questions You're Already Thinking</h2>
+      <h2 id="faq-heading">Founder Questions</h2>
     </div>
     <dl class="faq-list" data-reveal data-reveal-delay="1">
       {[
         {
-          q: 'Do I really need zero experience?',
-          a: 'Yes. Every session is designed for someone who has never opened a code editor. If you\'ve Googled anything before, you\'re already ahead. We start from the very beginning, every time.',
+          q: 'What do you build?',
+          a: 'We build startup MVPs, premium websites, SaaS products, native web apps, iOS and Android apps, internal tools, and AI or LLM-integrated products.',
         },
         {
-          q: 'What exactly is the "Agentic Workflow"?',
-          a: 'It\'s a method of building where you orchestrate AI agents, primarily Claude, to write, test, and deploy code on your behalf. You think in systems. Claude builds. You direct. Claude executes. It\'s how non-coders ship production products today.',
+          q: 'Can you work with non-technical founders?',
+          a: 'Yes. Many founders come to us with a strong product idea but no engineering team. We help shape the scope, explain tradeoffs, and turn the idea into software users can actually use.',
         },
         {
-          q: 'What is Claude Code and why do I need it?',
-          a: 'Claude Code is Anthropic\'s terminal-based AI coding agent. It\'s the most powerful tool for building full applications without writing code manually. We include a 5× Max Plan so you can use it to its full potential throughout the eight weeks.',
+          q: 'Can you handle large projects?',
+          a: 'Yes. We can take on larger product builds with multiple surfaces, integrations, admin systems, mobile apps, AI workflows, and phased releases. We scope them in milestones so progress stays visible.',
         },
         {
-          q: 'How is this different from YouTube tutorials?',
-          a: 'YouTube shows you what to do. Hyperspark puts you in a room with seven other builders, a mentor who knows your name, and live feedback on your actual projects. Accountability and community change everything.',
+          q: 'Do you only build AI apps?',
+          a: 'No. We build conventional software and AI-native products. If AI creates leverage, we integrate it. If a clean app, website, or backend system is the better answer, we build that.',
         },
         {
-          q: 'What kind of remote jobs can I land?',
-          a: 'AI Product Manager, Automation Specialist, Prompt Engineer, No-Code Developer, Growth Engineer, Freelance AI Builder, AI Tools Consultant. Roles paying ₹40L–₹1Cr+ for fully remote work. These titles didn\'t exist five years ago. They\'re the growth roles of the next decade.',
+          q: 'What stage should we be at before reaching out?',
+          a: 'Reach out when you have a product direction, target user, or business problem worth building around. A rough brief is enough if you are ready to make decisions and move quickly.',
         },
         {
-          q: 'Is the Claude Max Plan really included?',
-          a: 'Yes. Every student in Cohort 01 receives a 5× Claude Max Plan subscription as part of enrollment. No extra cost, no catch. We include it because we\'ve seen how much faster students move when compute isn\'t the bottleneck.',
+          q: 'Do you stay involved after launch?',
+          a: 'We can. Many products need iteration once real users arrive, so we can support v2 features, bug fixes, analytics, performance, AI improvements, and ongoing engineering velocity.',
         },
         {
-          q: 'What if I don\'t get placed?',
-          a: 'We don\'t believe in empty guarantees. If you show up, do the work, and still haven\'t shipped something you\'re proud of or started your job search, we extend your mentorship at no charge — for as long as it takes.',
+          q: 'Can you build the website too?',
+          a: 'Yes. We build launch pages, product sites, waitlists, landing pages, CMS-backed websites, and founder brands. The website can be part of the product launch, not a separate afterthought.',
         },
         {
-          q: 'When does Cohort 01 start?',
-          a: 'The exact date will be announced to applicants first. Apply now to hold your seat and receive the launch date before the public.',
+          q: 'How do we start?',
+          a: 'Send us a short product brief with the problem, target users, current stage, desired launch timeline, and what you need built. We will respond with the best next step.',
         },
       ].map((item) => (
         <div class="faq-item">
@@ -779,15 +849,14 @@ const weeks = [
 <section class="section-violet final-cta" aria-labelledby="cta-heading">
   <div class="container">
     <h2 id="cta-heading" data-reveal>
-      Build your first AI product.<br>Land your first remote offer.
+      Build The Product<br>Your Startup Is Waiting On.
     </h2>
     <p data-reveal data-reveal-delay="1">
-      Eight weeks from now, you'll have a portfolio with live products and your first remote job search underway. Or you'll still be wondering if you could have done it.
+      Bring us the product brief, the ambition, and the deadline. We will help you turn it into a website, app, platform, or AI-native system ready for real users.
     </p>
-    <a href="mailto:apply@hyperspark.studio" class="btn btn-primary btn-lg" data-reveal data-reveal-delay="2">
-      Apply for Cohort 01 — Only 8 Seats →
+    <a href="/start" class="btn btn-primary btn-lg" data-reveal data-reveal-delay="2">
+      Start A Founder Build →
     </a>
-    <p class="final-note" data-reveal data-reveal-delay="3">No CS degree. No experience. No excuses.</p>
   </div>
 </section>
 
@@ -797,35 +866,35 @@ const weeks = [
     <div class="footer-top">
       <div class="footer-brand">
         <a href="/" class="nav-logo">&gt;hyperspark</a>
-        <p>Building the next generation of AI-native product creators, one cohort at a time.</p>
+        <p>Development studio for founders building MVPs, apps, websites, and AI-native products.</p>
       </div>
       <div class="footer-col">
-        <h5>Learn</h5>
+        <h5>Studio</h5>
         <ul>
-          <li><a href="#curriculum">Curriculum</a></li>
-          <li><a href="#mentors">Mentors</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Community</h5>
+        <h5>Build</h5>
         <ul>
-          <li><a href="#pricing">Cohort 01</a></li>
-          <li><a href="#testimonials">Alumni</a></li>
+          <li><a href="#journey-pin">Process</a></li>
+          <li><a href="#engagement">Engagement</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
         <ul>
-          <li><a href="mailto:apply@hyperspark.studio">apply@hyperspark.studio</a></li>
+          <li><a href="mailto:build@hyperspark.studio">build@hyperspark.studio</a></li>
           <li><a href="https://twitter.com/hypersparkstudio" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
           <li><a href="https://linkedin.com/company/hyperspark-studio" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Hyperspark Studio. All rights reserved.</p>
-      <p>Built with Claude.</p>
+      <p>© 2026 Hyperspark Studio. All rights reserved.</p>
+      <p>Built by Hyperspark.</p>
     </div>
   </div>
 </footer>
@@ -904,7 +973,7 @@ const weeks = [
     scrollTrigger: { trigger: '.honest-stats', start: 'top 84%' }
   });
   gsap.from('.honest-num', {
-    textContent: 0, snap: { textContent: 1 }, duration: 1.2, ease: 'power2.out',
+    y: 12, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power2.out',
     scrollTrigger: { trigger: '.honest-stats', start: 'top 84%' }
   });
   gsap.from('.honest-quote', {
@@ -1042,7 +1111,7 @@ const weeks = [
     start: 'top 88%'
   });
 
-  // ── JOURNEY MAP (Curriculum) ──
+  // ── JOURNEY MAP (Process) ──
   const journeyPin   = document.querySelector<HTMLElement>('#journey-pin');
   const jCards       = gsap.utils.toArray<HTMLElement>('.journey-card');
   const jNodes       = gsap.utils.toArray<HTMLElement>('.journey-node-dot');
@@ -1098,7 +1167,7 @@ const weeks = [
     start: 'top 88%'
   });
 
-  // ── MENTORS ──
+  // ── TEAM ──
   gsap.from('.mentor-card', {
     y: 32, opacity: 0, stagger: 0.14, duration: 0.75, ease: 'power3.out',
     scrollTrigger: { trigger: '.mentors-grid', start: 'top 82%' }
@@ -1110,7 +1179,7 @@ const weeks = [
     scrollTrigger: { trigger: '.testimonials-grid', start: 'top 82%' }
   });
 
-  // ── PRICING ──
+  // ── ENGAGEMENT ──
   gsap.from('.pricing-card', {
     y: 40, opacity: 0, scale: 0.97, duration: 0.9, ease: 'power4.out',
     scrollTrigger: { trigger: '.pricing-card', start: 'top 84%' }
@@ -1123,7 +1192,7 @@ const weeks = [
   });
 
   // ── FINAL CTA ──
-  gsap.from('.final-cta h2, .final-cta > .container > p, .final-cta .btn, .final-note', {
+  gsap.from('.final-cta h2, .final-cta > .container > p, .final-cta .btn', {
     y: 20, opacity: 0, stagger: 0.12, duration: 0.75, ease: 'power3.out',
     scrollTrigger: { trigger: '.final-cta', start: 'top 82%' }
   });
