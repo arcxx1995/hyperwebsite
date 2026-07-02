@@ -1759,6 +1759,7 @@ section {
   .nav-links { display: none; }
 
   .pricing-grid { grid-template-columns: 1fr; }
+  .landing-benefits-grid { grid-template-columns: 1fr; }
 
   .hero {
     padding-top: calc(60px + var(--s-8));
@@ -2021,6 +2022,10 @@ section {
 }
 
 /* ── SEO LANDING PAGES ── */
+.landing-benefits-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .landing-hero {
   background: var(--c-hero);
   padding: calc(var(--s-24) + var(--s-16)) 0 var(--s-24);
@@ -2029,7 +2034,7 @@ section {
 .landing-hero h1 {
   font-size: var(--t-3xl);
   max-width: 18ch;
-  margin: var(--s-6) 0;
+  margin: var(--s-6) 0 var(--s-8);
 }
 
 .landing-hero .hero-sub {

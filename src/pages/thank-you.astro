@@ -1,23 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const ZCAL_LINK = 'arpanroychowdhury/60min';
 ---
 
 <Layout
   title="Brief Received — Hyperspark Studio"
-  description="We received your product brief. We will respond with the best next step."
+  description="We received your product brief. Book a call to talk it through."
   noindex
 >
 
 <section class="brief-page">
-  <div class="container brief-container">
+  <div class="container meeting-container">
     <a href="/" class="brief-logo" aria-label="Hyperspark home">&gt;hyperspark</a>
 
     <div class="brief-head">
       <h1>Brief Received.</h1>
-      <p>We read every brief ourselves. Expect a reply with the best next step, soon.</p>
+      <p>We read every brief ourselves. Grab a slot below and let's talk it through.</p>
     </div>
 
-    <a href="/" class="btn btn-primary btn-lg">Back to Home →</a>
+    <div class="zcal-inline-widget" data-link={ZCAL_LINK}></div>
+    <script src="https://zcal.co/embed.js" async defer></script>
+
+    <a href="/" class="btn btn-ghost meeting-skip">Skip for now, back to home →</a>
   </div>
 </section>
 
