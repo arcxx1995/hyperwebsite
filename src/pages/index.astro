@@ -1,6 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const faqs = [
+  {
+    q: 'What do you build?',
+    a: 'We build startup MVPs, premium websites, SaaS products, native web apps, iOS and Android apps, internal tools, and AI or LLM-integrated products.',
+  },
+  {
+    q: 'Can you work with non-technical founders?',
+    a: 'Yes. Many founders come to us with a strong product idea but no engineering team. We help shape the scope, explain tradeoffs, and turn the idea into software users can actually use.',
+  },
+  {
+    q: 'Can you handle large projects?',
+    a: 'Yes. We can take on larger product builds with multiple surfaces, integrations, admin systems, mobile apps, AI workflows, and phased releases. We scope them in milestones so progress stays visible.',
+  },
+  {
+    q: 'Do you only build AI apps?',
+    a: 'No. We build conventional software and AI-native products. If AI creates leverage, we integrate it. If a clean app, website, or backend system is the better answer, we build that.',
+  },
+  {
+    q: 'What stage should we be at before reaching out?',
+    a: 'Reach out when you have a product direction, target user, or business problem worth building around. A rough brief is enough if you are ready to make decisions and move quickly.',
+  },
+  {
+    q: 'Do you stay involved after launch?',
+    a: 'We can. Many products need iteration once real users arrive, so we can support v2 features, bug fixes, analytics, performance, AI improvements, and ongoing engineering velocity.',
+  },
+  {
+    q: 'Can you build the website too?',
+    a: 'Yes. We build launch pages, product sites, waitlists, landing pages, CMS-backed websites, and founder brands. The website can be part of the product launch, not a separate afterthought.',
+  },
+  {
+    q: 'How do we start?',
+    a: 'Send us a short product brief with the problem, target users, current stage, desired launch timeline, and what you need built. We will respond with the best next step.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 const weeks = [
   {
     week: 'PH 01', title: 'Founder Brief', tag: 'Discovery',
@@ -78,9 +123,11 @@ const weeks = [
 ---
 
 <Layout
-  title="Hyperspark Studio — Development Studio for Founders"
-  description="Hyperspark Studio is a development studio for founders building MVPs, websites, iOS and Android apps, web apps, and AI-native products."
+  title="Software Development Company for Founders | Hyperspark Studio"
+  description="Hyperspark Studio is a software development company for founders. Custom software development: MVPs, websites, iOS and Android apps, and AI-native products — built by senior engineers."
 >
+
+<script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
 
 <!-- NAV -->
 <header class="nav" id="nav" role="banner">
@@ -280,7 +327,7 @@ const weeks = [
 
   <!-- Heading block with image bg -->
   <div class="honest-hero">
-    <img src="/hero-bg.png" alt="" class="honest-hero-img" aria-hidden="true">
+    <img src="/hero-bg.jpg" alt="" class="honest-hero-img" aria-hidden="true">
     <p class="honest-text honest-text--a" aria-hidden="true">The Hard Part</p>
     <h2 id="problem-heading" class="honest-text honest-text--b">Is Building.</h2>
   </div>
@@ -382,6 +429,36 @@ const weeks = [
   </div>
 </section>
 
+<!-- INDUSTRIES -->
+<section aria-labelledby="industries-heading">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <h2 id="industries-heading">Industries We<br>Build Products For.</h2>
+      <p>The stack changes less than the domain. We bring senior engineering to the industries where product decisions carry the most weight.</p>
+    </div>
+    <div class="build-grid">
+      {[
+        { num: '01', title: 'SaaS', desc: 'Subscription platforms, dashboards, multi-tenant systems, and usage-based billing' },
+        { num: '02', title: 'Real Estate', desc: 'Listings platforms, CRM tools, tenant and property management systems' },
+        { num: '03', title: 'Fintech', desc: 'Payments, budgeting, and reporting products built with compliance in mind' },
+        { num: '04', title: 'Healthtech', desc: 'Patient-facing apps, scheduling, and privacy-aware health workflows' },
+        { num: '05', title: 'E-Commerce & Marketplaces', desc: 'Storefronts, checkout, multi-vendor systems, and commerce infrastructure' },
+        { num: '06', title: 'EdTech', desc: 'Course platforms, cohort tools, and learning products built for retention' },
+        { num: '07', title: 'Consumer & Social', desc: 'Community apps, content platforms, and products built for daily use' },
+        { num: '08', title: 'AI-Native Products', desc: 'Copilots, agents, and LLM-powered tools across any industry above' },
+      ].map((item, i) => (
+        <div class="build-item" data-reveal data-reveal-delay={String((i % 4) + 1)}>
+          <span class="build-num" aria-hidden="true">{item.num}</span>
+          <div>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section class="audience-section" id="projects" aria-labelledby="audience-heading">
   <div class="audience-pin" id="audience-pin">
@@ -401,7 +478,7 @@ const weeks = [
         userBase: '500K+ users, 50K+ subscribers',
         revenue: 'Apple iPhone App of the Year, 2025',
         help: 'iOS app development for a neuroinclusive planning experience, focused on mobile workflows, daily structure, reminders, and an interaction model precise enough to win Apple\'s top award.',
-        img: '/tiimo.png'
+        img: '/tiimo.jpg'
       },
       {
         num: '02', title: 'Bird',
@@ -409,7 +486,7 @@ const weeks = [
         userBase: '15K+ enterprise customers',
         revenue: '$900M est. revenue',
         help: 'Software development across communication workflows, backend product systems, and integrations for a company that carries roughly 40% of the world\'s commercial messaging volume, by its own count.',
-        img: '/bird.png'
+        img: '/bird.jpg'
       },
       {
         num: '03', title: 'Openverse',
@@ -417,7 +494,7 @@ const weeks = [
         userBase: '800M+ media items indexed',
         revenue: '$0 open-source',
         help: 'Platform development for discovery, search, and public web infrastructure around one of the largest open-media catalogues in existence, stewarded by Automattic.',
-        img: '/openverse.png'
+        img: '/openverse.jpg'
       },
       {
         num: '04', title: 'Equals',
@@ -425,7 +502,7 @@ const weeks = [
         userBase: 'Notion, Zeta, Levity among customers',
         revenue: '$16M Series A, led by a16z',
         help: 'Platform development for analytics workflows, dashboard experiences, and reporting systems for a company backed by a16z, dbt Labs\' founder, and Slack\'s former CPO.',
-        img: '/equals.png'
+        img: '/equals.jpg'
       },
       {
         num: '05', title: 'Stash',
@@ -433,7 +510,7 @@ const weeks = [
         userBase: '$35M raised (as Fractal, 2022)',
         revenue: '40% checkout conversion lift',
         help: 'Platform development for game commerce, player-facing web flows, and one-tap checkout systems, for a platform partnered with Adyen that powers titles like Warhammer 40,000: Tacticus to a 75% repeat purchase rate.',
-        img: '/stash.png'
+        img: '/stash.jpg'
       },
       {
         num: '06', title: 'Samply',
@@ -441,7 +518,7 @@ const weeks = [
         userBase: 'Public data unavailable',
         revenue: 'Undisclosed',
         help: 'Product and app development for a polished consumer experience, focused on smooth onboarding, clear discovery flows, and reliable everyday interactions.',
-        img: '/samply.png'
+        img: '/samply.jpg'
       },
     ].map((p, i) => (
       <div class="audience-slide" data-slide={i}>
@@ -793,40 +870,7 @@ const weeks = [
       <h2 id="faq-heading">Founder Questions</h2>
     </div>
     <dl class="faq-list" data-reveal data-reveal-delay="1">
-      {[
-        {
-          q: 'What do you build?',
-          a: 'We build startup MVPs, premium websites, SaaS products, native web apps, iOS and Android apps, internal tools, and AI or LLM-integrated products.',
-        },
-        {
-          q: 'Can you work with non-technical founders?',
-          a: 'Yes. Many founders come to us with a strong product idea but no engineering team. We help shape the scope, explain tradeoffs, and turn the idea into software users can actually use.',
-        },
-        {
-          q: 'Can you handle large projects?',
-          a: 'Yes. We can take on larger product builds with multiple surfaces, integrations, admin systems, mobile apps, AI workflows, and phased releases. We scope them in milestones so progress stays visible.',
-        },
-        {
-          q: 'Do you only build AI apps?',
-          a: 'No. We build conventional software and AI-native products. If AI creates leverage, we integrate it. If a clean app, website, or backend system is the better answer, we build that.',
-        },
-        {
-          q: 'What stage should we be at before reaching out?',
-          a: 'Reach out when you have a product direction, target user, or business problem worth building around. A rough brief is enough if you are ready to make decisions and move quickly.',
-        },
-        {
-          q: 'Do you stay involved after launch?',
-          a: 'We can. Many products need iteration once real users arrive, so we can support v2 features, bug fixes, analytics, performance, AI improvements, and ongoing engineering velocity.',
-        },
-        {
-          q: 'Can you build the website too?',
-          a: 'Yes. We build launch pages, product sites, waitlists, landing pages, CMS-backed websites, and founder brands. The website can be part of the product launch, not a separate afterthought.',
-        },
-        {
-          q: 'How do we start?',
-          a: 'Send us a short product brief with the problem, target users, current stage, desired launch timeline, and what you need built. We will respond with the best next step.',
-        },
-      ].map((item) => (
+      {faqs.map((item) => (
         <div class="faq-item">
           <details>
             <summary>
@@ -881,6 +925,9 @@ const weeks = [
         <ul>
           <li><a href="#journey-pin">Process</a></li>
           <li><a href="#engagement">Engagement</a></li>
+          <li><a href="/vibe-coding-agency">Vibe Coding Agency</a></li>
+          <li><a href="/cto-for-hire">CTO for Hire</a></li>
+          <li><a href="/build-mvp">MVP Development</a></li>
         </ul>
       </div>
       <div class="footer-col">

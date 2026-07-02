@@ -1,0 +1,11 @@
+# Hyperspark Studio
+
+> Hyperspark Studio is a software development company for founders. Senior engineers build startup MVPs, websites, iOS and Android apps, native web apps, and AI-native products end to end — using AI-native development (Claude Code, Cursor, v0) under senior engineering review. Focus markets: US and EU. Contact: build@hyperspark.studio.
+
+## Pages
+
+- [Home](https://hyperspark.studio/): What Hyperspark Studio builds, the 8-phase build process, team, testimonials, and founder FAQ.
+- [Vibe Coding Agency](https://hyperspark.studio/vibe-coding-agency): What a vibe coding agency is, and how Hyperspark ships production-grade software with AI coding tools.
+- [CTO for Hire](https://hyperspark.studio/cto-for-hire): Fractional CTO engagements — technical leadership plus a senior build team in one engagement.
+- [Build an MVP](https://hyperspark.studio/build-mvp): MVP development for startups — scoping, timelines, cost, and what an MVP should include.
+- [Start a Build](https://hyperspark.studio/start): The five-question product brief form to start working with Hyperspark Studio.
