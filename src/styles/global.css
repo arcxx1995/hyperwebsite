@@ -1819,6 +1819,70 @@ section {
 
   section { padding: var(--s-16) 0; }
   .final-cta { padding: var(--s-16) 0; }
+
+  /* Desktop-only forced line breaks fight the narrow viewport */
+  .hero h1 br,
+  .section-header h2 br,
+  .audience-heading-col h2 br,
+  .journey-left h2 br,
+  .journey-sub br,
+  .final-cta h2 br { display: none; }
+  .hero h1,
+  .section-header h2,
+  .final-cta h2 { text-wrap: balance; }
+
+  /* Audience pin: side column becomes a compact header bar above the stage */
+  .audience-heading-col {
+    top: var(--nav-h);
+    right: 0;
+    bottom: auto;
+    width: auto;
+    height: 84px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    border-right: none;
+    border-bottom: 1px solid var(--c-border);
+    padding: 0 var(--s-5);
+  }
+  .audience-heading-col h2 { font-size: 1.25rem; }
+  .audience-slide-counter { margin-top: 0; padding-top: 0; border-top: none; flex-shrink: 0; }
+  .audience-stage {
+    left: 0;
+    top: calc(var(--nav-h) + 84px);
+  }
+  .audience-slide { padding: 0 var(--s-5); }
+  .audience-text { gap: var(--s-4); }
+  .slide-voice { font-size: var(--t-base); }
+  .slide-help-body { font-size: var(--t-sm); }
+
+  /* Journey pin: same treatment */
+  .journey-left {
+    top: var(--nav-h);
+    right: 0;
+    bottom: auto;
+    width: auto;
+    height: 64px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    border-right: none;
+    border-bottom: 1px solid var(--c-border);
+    padding: 0 var(--s-5);
+  }
+  .journey-left h2 { font-size: 1.35rem; margin-bottom: 0; }
+  .journey-sub { display: none; }
+  .journey-counter { margin-top: 0; padding-top: 0; border-top: none; flex-shrink: 0; }
+  .journey-right {
+    left: 0;
+    top: calc(var(--nav-h) + 64px);
+    padding: var(--s-5) var(--s-5) 0;
+  }
+  .journey-card-title { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+  .journey-node-label { display: none; }
+  .journey-map { padding-bottom: var(--s-4); }
 }
 
 @media (max-width: 480px) {
@@ -1933,6 +1997,27 @@ section {
 
 @media (max-width: 480px) {
   .brief-page { padding: var(--s-8) 0; }
+}
+
+.meeting-container {
+  max-width: 760px;
+}
+
+.zcal-inline-widget {
+  min-width: 320px;
+  height: 700px;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--s-8);
+}
+
+.meeting-skip {
+  color: var(--c-ink-dim);
+}
+
+@media (max-width: 480px) {
+  .zcal-inline-widget { height: 620px; }
 }
 
 /* ── SEO LANDING PAGES ── */
