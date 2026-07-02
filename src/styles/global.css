@@ -1934,3 +1934,37 @@ section {
 @media (max-width: 480px) {
   .brief-page { padding: var(--s-8) 0; }
 }
+
+/* ── SEO LANDING PAGES ── */
+.landing-hero {
+  background: var(--c-hero);
+  padding: calc(var(--s-24) + var(--s-16)) 0 var(--s-24);
+}
+
+.landing-hero h1 {
+  font-size: var(--t-3xl);
+  max-width: 18ch;
+  margin: var(--s-6) 0;
+}
+
+.landing-hero .hero-sub {
+  margin-bottom: var(--s-8);
+}
+
+.landing-prose {
+  max-width: 68ch;
+}
+
+.landing-prose p {
+  font-size: var(--t-lg);
+  color: var(--c-ink-dim);
+  margin-bottom: var(--s-6);
+}
+
+.landing-prose p:first-child {
+  color: var(--c-ink);
+}
+
+.landing-services {
+  max-width: 68ch;
+}
