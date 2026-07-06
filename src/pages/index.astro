@@ -48,7 +48,7 @@ const faqSchema = {
 
 const weeks = [
   {
-    week: 'PH 01', title: 'Founder Brief', tag: 'Discovery',
+    week: 'Phase 01', title: 'Founder Brief', tag: 'Discovery',
     points: [
       'Clarify the product thesis, market, users, and launch constraints',
       'Separate must-have MVP scope from expensive distractions',
@@ -57,7 +57,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 02', title: 'Product Architecture', tag: 'Planning',
+    week: 'Phase 02', title: 'Product Architecture', tag: 'Planning',
     points: [
       'Choose the right stack for speed today and scale tomorrow',
       'Plan data models, APIs, authentication, payments, and deployment',
@@ -66,7 +66,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 03', title: 'Interface System', tag: 'Design',
+    week: 'Phase 03', title: 'Interface System', tag: 'Design',
     points: [
       'Shape the product experience around your first real workflows',
       'Create a design system that makes the MVP feel funded',
@@ -75,7 +75,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 04', title: 'Core Build Sprint', tag: 'Engineering',
+    week: 'Phase 04', title: 'Core Build Sprint', tag: 'Engineering',
     points: [
       'Ship the web app, native app, dashboard, or marketplace core',
       'Implement auth, databases, subscriptions, notifications, and analytics',
@@ -84,7 +84,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 05', title: 'AI & LLM Integration', tag: 'Intelligence',
+    week: 'Phase 05', title: 'AI & LLM Integration', tag: 'Intelligence',
     points: [
       'Add LLM workflows where they create real product leverage',
       'Build chat, copilots, document intelligence, agents, and automations',
@@ -93,7 +93,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 06', title: 'QA, Analytics & Hardening', tag: 'Reliability',
+    week: 'Phase 06', title: 'QA, Analytics & Hardening', tag: 'Reliability',
     points: [
       'Test the critical user paths across devices and roles',
       'Instrument product analytics, event tracking, and error visibility',
@@ -102,7 +102,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 07', title: 'Launch Support', tag: 'Release',
+    week: 'Phase 07', title: 'Launch Support', tag: 'Release',
     points: [
       'Deploy the product to production with a clean launch path',
       'Support App Store, Play Store, Vercel, cloud, and domain setup',
@@ -111,7 +111,7 @@ const weeks = [
     ],
   },
   {
-    week: 'PH 08', title: 'Founder Engineering Team', tag: 'Scale',
+    week: 'Phase 08', title: 'Founder Engineering Team', tag: 'Scale',
     points: [
       'Iterate on customer feedback after the MVP is live',
       'Plan v2 features, integrations, and growth experiments',
@@ -124,10 +124,17 @@ const weeks = [
 
 <Layout
   title="Software Development Company for Founders | Hyperspark Studio"
-  description="Hyperspark Studio is a software development company for founders. Custom software development: MVPs, websites, iOS and Android apps, and AI-native products — built by senior engineers."
+  description="Hyperspark Studio is a software development company for founders. Custom software development: MVPs, websites, iOS and Android apps, and AI-native products, built by senior engineers."
 >
 
 <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
+
+<script is:inline>
+  // Pins run only on desktop with motion allowed; everyone else gets static flow (see PIN FALLBACK css)
+  if (window.matchMedia('(min-width: 769px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-pins');
+  }
+</script>
 
 <!-- NAV -->
 <header class="nav" id="nav" role="banner">
@@ -139,6 +146,19 @@ const weeks = [
       <a href="#journey-pin">Process</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <details class="nav-menu">
+      <summary aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </summary>
+      <nav class="nav-menu-panel" aria-label="Site navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey-pin">Process</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </details>
     <a href="/start" class="btn btn-primary nav-cta">Start a Build →</a>
   </div>
 </header>
@@ -171,7 +191,7 @@ const weeks = [
       </h1>
 
       <p class="hero-sub">
-        Hyperspark Studio builds websites, iOS and Android apps, native web apps, and AI-native products — senior engineers who own the build end to end, not a junior bench you have to manage yourself.
+        Hyperspark Studio builds websites, iOS and Android apps, native web apps, and AI-native products: senior engineers who own the build end to end, not a junior bench you have to manage yourself.
       </p>
 
       <div class="hero-ctas">
@@ -360,7 +380,7 @@ const weeks = [
       </blockquote>
     </div>
 
-    <!-- 3 realities — no card borders -->
+    <!-- 3 realities, no card borders -->
     <div class="honest-realities">
       {[
         {
@@ -436,23 +456,20 @@ const weeks = [
       <h2 id="industries-heading">Industries We&nbsp;<br>Build Products For.</h2>
       <p>The stack changes less than the domain. We bring senior engineering to the industries where product decisions carry the most weight.</p>
     </div>
-    <div class="build-grid">
+    <div class="industry-list">
       {[
-        { num: '01', title: 'SaaS', desc: 'Subscription platforms, dashboards, multi-tenant systems, and usage-based billing' },
-        { num: '02', title: 'Real Estate', desc: 'Listings platforms, CRM tools, tenant and property management systems' },
-        { num: '03', title: 'Fintech', desc: 'Payments, budgeting, and reporting products built with compliance in mind' },
-        { num: '04', title: 'Healthtech', desc: 'Patient-facing apps, scheduling, and privacy-aware health workflows' },
-        { num: '05', title: 'E-Commerce & Marketplaces', desc: 'Storefronts, checkout, multi-vendor systems, and commerce infrastructure' },
-        { num: '06', title: 'EdTech', desc: 'Course platforms, cohort tools, and learning products built for retention' },
-        { num: '07', title: 'Consumer & Social', desc: 'Community apps, content platforms, and products built for daily use' },
-        { num: '08', title: 'AI-Native Products', desc: 'Copilots, agents, and LLM-powered tools across any industry above' },
-      ].map((item, i) => (
-        <div class="build-item" data-reveal data-reveal-delay={String((i % 4) + 1)}>
-          <span class="build-num" aria-hidden="true">{item.num}</span>
-          <div>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
+        { title: 'SaaS', desc: 'Subscription platforms, dashboards, multi-tenant systems, and usage-based billing' },
+        { title: 'Real Estate', desc: 'Listings platforms, CRM tools, tenant and property management systems' },
+        { title: 'Fintech', desc: 'Payments, budgeting, and reporting products built with compliance in mind' },
+        { title: 'Healthtech', desc: 'Patient-facing apps, scheduling, and privacy-aware health workflows' },
+        { title: 'E-Commerce & Marketplaces', desc: 'Storefronts, checkout, multi-vendor systems, and commerce infrastructure' },
+        { title: 'EdTech', desc: 'Course platforms, cohort tools, and learning products built for retention' },
+        { title: 'Consumer & Social', desc: 'Community apps, content platforms, and products built for daily use' },
+        { title: 'AI-Native Products', desc: 'Copilots, agents, and LLM-powered tools across any industry above' },
+      ].map((item) => (
+        <div class="industry-row">
+          <h4>{item.title}</h4>
+          <p>{item.desc}</p>
         </div>
       ))}
     </div>
@@ -474,7 +491,7 @@ const weeks = [
     {[
       {
         num: '01', title: 'Tiimo',
-        voice: 'Visual planning app for neurodivergent minds — now Apple\'s App of the Year.',
+        voice: 'Visual planning app for neurodivergent minds, now Apple\'s App of the Year.',
         userBase: '500K+ users, 50K+ subscribers',
         revenue: 'Apple iPhone App of the Year, 2025',
         help: 'iOS app development for a neuroinclusive planning experience, focused on mobile workflows, daily structure, reminders, and an interaction model precise enough to win Apple\'s top award.',
@@ -490,7 +507,7 @@ const weeks = [
       },
       {
         num: '03', title: 'Openverse',
-        voice: 'Search engine for openly licensed media — one of the largest open-content databases on the web.',
+        voice: 'Search engine for openly licensed media: one of the largest open-content databases on the web.',
         userBase: '800M+ media items indexed',
         revenue: '$0 open-source',
         help: 'Platform development for discovery, search, and public web infrastructure around one of the largest open-media catalogues in existence, stewarded by Automattic.',
@@ -568,7 +585,7 @@ const weeks = [
     <div class="journey-left">
       <h2 id="journey-heading">Build&nbsp;<br>Process.</h2>
       <p class="journey-sub">From brief&nbsp;<br>to product team.</p>
-      <div class="journey-counter" aria-live="polite">
+      <div class="journey-counter">
         <span class="journey-cur">01</span><span class="journey-sep"> / 08</span>
       </div>
     </div>
@@ -577,7 +594,7 @@ const weeks = [
     <div class="journey-right">
       <div class="journey-stage">
         {weeks.map((w, i) => (
-          <div class="journey-card" data-card={i} aria-hidden={i !== 0 ? 'true' : 'false'}>
+          <div class="journey-card" data-card={i}>
             <div class="journey-card-meta">
               <span class="journey-card-wk">{w.week}</span>
               <span class="journey-card-phase">{w.tag}</span>
@@ -617,57 +634,43 @@ const weeks = [
         {
           title: 'Product Strategy Into Scope',
           desc: 'We turn rough founder ideas into buildable product scopes, milestone plans, and technical priorities.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>`,
         },
         {
           title: 'Full-Stack Product Engineering',
           desc: 'Frontend, backend, databases, APIs, deployment, payments, auth, analytics, and production operations.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>`,
         },
         {
           title: 'Mobile App Delivery',
           desc: 'iOS and Android products with mobile UX, push notifications, subscriptions, releases, and backend support.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>`,
         },
         {
           title: 'AI-Native Systems',
           desc: 'LLM chat, agents, retrieval, document intelligence, automation pipelines, prompt flows, and model operations.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>`,
         },
         {
           title: 'Premium Website Builds',
           desc: 'Launch pages, brand sites, marketing funnels, CMS content, docs, and product storytelling that founders can sell with.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>`,
         },
         {
           title: 'Large Scope Ownership',
           desc: 'We can take on complex projects with multiple surfaces, integrations, phased releases, and long-running engineering needs.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0"/>`,
         },
         {
           title: 'Senior Code Review',
           desc: 'Experienced engineers review architecture, implementation, edge cases, and long-term maintainability as we build.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>`,
         },
         {
           title: 'Post-Launch Iteration',
           desc: 'After launch, we help founders respond to users, fix bottlenecks, build v2, and keep engineering velocity alive.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>`,
         },
         {
           title: 'Infrastructure & DevOps',
           desc: 'CI/CD, cloud infrastructure, monitoring, and scaling built in from day one, not bolted on after things break.',
-          icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/>`,
         },
       ].map((item, i) => (
         <div class="include-tile" data-reveal data-reveal-delay={String((i % 3) + 1)}>
-          <div class="include-icon" aria-hidden="true">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={item.icon}></svg>
-          </div>
-          <div>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
+          <h4>{item.title}</h4>
+          <p>{item.desc}</p>
         </div>
       ))}
     </div>
@@ -794,10 +797,7 @@ const weeks = [
     <div class="pricing-wrapper" data-reveal data-reveal-delay="1">
       <div class="pricing-intro">
         <p class="pricing-label">Founder Build Engagement</p>
-        <div class="pricing-price">
-          <span class="price-main">MVP</span>
-          <span class="price-strike">to scale</span>
-        </div>
+        <p class="engagement-scope">MVP to scale.</p>
         <p class="pricing-note">Scoped around your product, timeline, technical risk, and launch goal</p>
       </div>
 
@@ -844,10 +844,7 @@ const weeks = [
       </div>
 
       <div class="pricing-footer">
-        <div class="pricing-urgency">
-          <span class="urgency-dot" aria-hidden="true"></span>
-          We take on a limited number of founder builds at a time
-        </div>
+        <p class="pricing-urgency">We take on a limited number of founder builds at a time</p>
 
         <a href="/start" class="btn btn-primary btn-full btn-lg">
           Send Your Product Brief →
@@ -957,6 +954,9 @@ const weeks = [
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reducedMotion) gsap.defaults({ duration: 0.01 });
 
+  // Set by the inline head script: desktop + motion allowed. CSS PIN FALLBACK handles every other case.
+  const usePins = document.documentElement.classList.contains('js-pins');
+
   // ── HERO VIDEO ──
   const heroVideo = document.querySelector('.hero-video') as HTMLVideoElement | null;
   if (heroVideo && reducedMotion) {
@@ -1049,7 +1049,7 @@ const weeks = [
   const aPin     = document.getElementById('audience-pin');
   const aAudCur  = document.querySelector<HTMLElement>('.aud-cur');
 
-  if (aSlides.length && aPin && !reducedMotion) {
+  if (aSlides.length && aPin && usePins) {
     const N    = aSlides.length;
     const STEP = 4; // timeline units per slide transition
 
@@ -1168,7 +1168,7 @@ const weeks = [
   const N_J          = jCards.length;
   const J_STEP       = 4;
 
-  if (journeyPin && jCards.length) {
+  if (journeyPin && jCards.length && usePins) {
     gsap.set(jCards, { autoAlpha: 0, y: 55 });
     gsap.set(jCards[0], { autoAlpha: 1, y: 0 });
     // Activate first node immediately
@@ -1227,9 +1227,9 @@ const weeks = [
   });
 
   // ── ENGAGEMENT ──
-  gsap.from('.pricing-card', {
-    y: 40, opacity: 0, scale: 0.97, duration: 0.9, ease: 'power4.out',
-    scrollTrigger: { trigger: '.pricing-card', start: 'top 84%' }
+  gsap.from('.pricing-wrapper', {
+    y: 40, opacity: 0, duration: 0.9, ease: 'power4.out',
+    scrollTrigger: { trigger: '.pricing-wrapper', start: 'top 84%' }
   });
 
   // ── FAQ ──

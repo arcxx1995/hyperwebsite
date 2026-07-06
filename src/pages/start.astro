@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Start a Build — Hyperspark Studio"
-  description="Send Hyperspark Studio your product brief. Five questions, no mailer, straight to the team."
+  description="Send Hyperspark Studio your product brief. Seven questions, no mailer, straight to the team."
 >
 
 <section class="brief-page">
@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="brief-head">
       <h1>Send Your&nbsp;<br>Product Brief.</h1>
-      <p>Five questions. That is all we need to tell you if we are the right fit.</p>
+      <p>Seven questions. That is all we need to tell you if we are the right fit.</p>
     </div>
 
     <form
@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
       method="POST"
       class="brief-form"
     >
-      <input type="hidden" name="_next" value="/thank-you" />
+      <input type="hidden" name="_next" value="https://hyperspark.studio/thank-you" />
       <input type="hidden" name="_subject" value="New founder brief — Hyperspark" />
       <p class="brief-honeypot">
         <label>Don't fill this out: <input name="_gotcha" tabindex="-1" autocomplete="off" /></label>
@@ -72,7 +72,18 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="brief-field">
-        <label for="whatsapp">06 · WhatsApp no.</label>
+        <label for="brief">06 · Describe the product</label>
+        <textarea
+          id="brief"
+          name="brief"
+          rows="4"
+          required
+          placeholder="The problem, target users, current stage, and what you need built"
+        ></textarea>
+      </div>
+
+      <div class="brief-field">
+        <label for="whatsapp">07 · WhatsApp no. (optional)</label>
         <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 555 123 4567" />
       </div>
 

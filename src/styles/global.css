@@ -85,7 +85,7 @@ html {
 body {
   background: var(--c-bg);
   color: var(--c-ink);
-  font-family: var(--f-mono);
+  font-family: var(--f-sans); /* DESIGN.md: sans body, mono display */
   font-size: var(--t-base);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -380,10 +380,10 @@ section {
 }
 
 .hero h1 em {
-  color: oklch(0.96 0.004 270 / 0.55);
+  color: var(--c-accent);
   font-style: italic;
   font-family: var(--f-mono);
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -520,11 +520,11 @@ section {
 
 .marquee-item-name {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--c-muted);
+  color: var(--c-ink-dim);
   white-space: nowrap;
 }
 
@@ -879,7 +879,7 @@ section {
   min-height: 30px;
   padding: 0 var(--s-3);
   border: 1px solid rgba(224, 167, 41, 0.4);
-  border-radius: 999px;
+  border-radius: 3px;
   background: rgba(224, 167, 41, 0.08);
   color: var(--c-ink);
   font-family: var(--f-mono);
@@ -1231,9 +1231,9 @@ section {
 }
 
 @keyframes journey-pulse {
-  0%   { box-shadow: 0 0 0 0   oklch(0.65 0.22 270 / 0.75); }
-  60%  { box-shadow: 0 0 0 8px oklch(0.65 0.22 270 / 0); }
-  100% { box-shadow: 0 0 0 0   oklch(0.65 0.22 270 / 0); }
+  0%   { box-shadow: 0 0 0 0   oklch(0.78 0.17 58 / 0.65); }
+  60%  { box-shadow: 0 0 0 8px oklch(0.78 0.17 58 / 0); }
+  100% { box-shadow: 0 0 0 0   oklch(0.78 0.17 58 / 0); }
 }
 
 .journey-node-label {
@@ -1258,35 +1258,17 @@ section {
 .includes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--s-4);
+  gap: var(--s-8) var(--s-10);
 }
 
 .include-tile {
-  display: flex;
-  gap: var(--s-4);
-  padding: var(--s-6);
-  border: 1px solid var(--c-border);
-  border-radius: 4px;
-}
-
-.include-icon {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  background: var(--c-subtle);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-primary-hi);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--c-border);
 }
 
 .include-tile h4 {
   font-size: var(--t-base);
-  margin-bottom: var(--s-1);
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
+  margin-bottom: var(--s-2);
 }
 
 .include-tile p {
@@ -1459,10 +1441,6 @@ section {
   text-align: center;
 }
 
-.pricing-intro .pricing-price,
-.pricing-intro .pricing-note {
-  justify-content: center;
-}
 
 .pricing-grid {
   display: grid;
@@ -1501,26 +1479,14 @@ section {
   margin-bottom: var(--s-6);
 }
 
-.pricing-price {
-  display: flex;
-  align-items: baseline;
-  gap: var(--s-4);
-  margin-bottom: var(--s-2);
-}
-
-.price-main {
+.engagement-scope {
   font-family: var(--f-mono);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
+  line-height: 1.05;
   color: var(--c-ink);
-}
-
-.price-strike {
-  font-family: var(--f-mono);
-  font-size: var(--t-xl);
-  color: var(--c-muted);
-  text-decoration: none;
+  margin-bottom: var(--s-3);
 }
 
 .pricing-note {
@@ -1559,23 +1525,12 @@ section {
 }
 
 .pricing-urgency {
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
   font-family: var(--f-mono);
   font-size: var(--t-sm);
   font-weight: 600;
   color: var(--c-ink);
+  text-align: center;
   margin-bottom: var(--s-6);
-}
-
-.urgency-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: oklch(0.65 0.20 25);
-  flex-shrink: 0;
-  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 .pricing-sub {
@@ -1748,12 +1703,6 @@ section {
   color: var(--c-muted);
 }
 
-/* ── KEYFRAMES ── */
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.8); }
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -1784,9 +1733,8 @@ section {
 
   .audience-slide-inner {
     grid-template-columns: 1fr;
+    gap: var(--s-6);
   }
-
-  .audience-media { display: none; }
 
   .slide-title { font-size: clamp(1.75rem, 5vw, 2.5rem); }
 
@@ -1832,58 +1780,14 @@ section {
   .section-header h2,
   .final-cta h2 { text-wrap: balance; }
 
-  /* Audience pin: side column becomes a compact header bar above the stage */
-  .audience-heading-col {
-    top: var(--nav-h);
-    right: 0;
-    bottom: auto;
-    width: auto;
-    height: 84px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--s-4);
-    border-right: none;
-    border-bottom: 1px solid var(--c-border);
-    padding: 0 var(--s-5);
-  }
-  .audience-heading-col h2 { font-size: 1.25rem; }
-  .audience-slide-counter { margin-top: 0; padding-top: 0; border-top: none; flex-shrink: 0; }
-  .audience-stage {
-    left: 0;
-    top: calc(var(--nav-h) + 84px);
-  }
-  .audience-slide { padding: 0 var(--s-5); }
+  /* Pins never run ≤768px (see PIN FALLBACK); only typography tweaks needed */
   .audience-text { gap: var(--s-4); }
   .slide-voice { font-size: var(--t-base); }
   .slide-help-body { font-size: var(--t-sm); }
-
-  /* Journey pin: same treatment */
-  .journey-left {
-    top: var(--nav-h);
-    right: 0;
-    bottom: auto;
-    width: auto;
-    height: 64px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--s-4);
-    border-right: none;
-    border-bottom: 1px solid var(--c-border);
-    padding: 0 var(--s-5);
-  }
-  .journey-left h2 { font-size: 1.35rem; margin-bottom: 0; }
-  .journey-sub { display: none; }
-  .journey-counter { margin-top: 0; padding-top: 0; border-top: none; flex-shrink: 0; }
-  .journey-right {
-    left: 0;
-    top: calc(var(--nav-h) + 64px);
-    padding: var(--s-5) var(--s-5) 0;
-  }
+  .audience-heading-col h2 { font-size: clamp(1.75rem, 6vw, 2.2rem); }
+  .journey-left h2 { font-size: clamp(1.75rem, 6vw, 2.4rem); }
   .journey-card-title { font-size: clamp(1.5rem, 6.5vw, 2rem); }
-  .journey-node-label { display: none; }
-  .journey-map { padding-bottom: var(--s-4); }
+  .industry-row { grid-template-columns: 1fr; gap: var(--s-1); }
 }
 
 @media (max-width: 480px) {
@@ -1891,6 +1795,162 @@ section {
   .pricing-box { padding: var(--s-5); }
   .mentor-card { padding: var(--s-6); }
 }
+
+/* ── MOBILE NAV MENU ── */
+.nav-menu {
+  display: none;
+  position: relative;
+  margin-left: auto;
+}
+
+.nav-menu summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--c-border-hi);
+  border-radius: 3px;
+  color: var(--c-ink);
+  cursor: pointer;
+}
+
+.nav-menu summary::-webkit-details-marker { display: none; }
+
+.nav-menu summary:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+.nav-menu[open] summary { background: var(--c-surface); }
+
+.nav-menu-panel {
+  position: absolute;
+  top: calc(100% + var(--s-2));
+  right: 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: oklch(0.08 0 0 / 0.98);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  padding: var(--s-2);
+}
+
+.nav-menu-panel a {
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  color: var(--c-ink-dim);
+  padding: var(--s-3) var(--s-4);
+  border-radius: 3px;
+}
+
+.nav-menu-panel a:hover {
+  background: var(--c-surface);
+  color: var(--c-ink);
+}
+
+@media (max-width: 768px) {
+  .nav-menu { display: block; }
+}
+
+/* ── INDUSTRY LIST ── */
+.industry-list {
+  border-top: 1px solid var(--c-border);
+}
+
+.industry-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 320px) 1fr;
+  gap: var(--s-4) var(--s-10);
+  padding: var(--s-5) 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.industry-row h4 {
+  font-family: var(--f-mono);
+  font-size: var(--t-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.industry-row p {
+  font-size: var(--t-sm);
+  color: var(--c-ink-dim);
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+/* ── PIN FALLBACK ──
+   Pins run only on desktop with motion allowed (html.js-pins set by inline script).
+   No JS, prefers-reduced-motion, or ≤768px → normal document flow. */
+html:not(.js-pins) .audience-pin {
+  height: auto;
+  padding: var(--s-20) 0;
+}
+
+html:not(.js-pins) .audience-heading-col {
+  position: static;
+  width: auto;
+  max-width: 1160px;
+  margin: 0 auto var(--s-12);
+  padding: 0 var(--s-8);
+  border-right: none;
+  background: none;
+}
+
+html:not(.js-pins) .audience-slide-counter { display: none; }
+
+html:not(.js-pins) .audience-stage {
+  position: static;
+  overflow: visible;
+}
+
+html:not(.js-pins) .audience-slide {
+  position: static;
+  visibility: visible;
+}
+
+html:not(.js-pins) .audience-slide + .audience-slide { margin-top: var(--s-20); }
+
+html:not(.js-pins) .audience-progress-track { display: none; }
+
+html:not(.js-pins) #journey-pin { padding: var(--s-20) 0; }
+
+html:not(.js-pins) .journey-inner { height: auto; }
+
+html:not(.js-pins) .journey-left {
+  position: static;
+  width: auto;
+  max-width: 1160px;
+  margin: 0 auto var(--s-10);
+  padding: 0 var(--s-8);
+  border-right: none;
+  background: none;
+}
+
+html:not(.js-pins) .journey-counter { display: none; }
+
+html:not(.js-pins) .journey-right {
+  position: static;
+  display: block;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 var(--s-8);
+}
+
+html:not(.js-pins) .journey-stage { overflow: visible; }
+
+html:not(.js-pins) .journey-card {
+  position: static;
+  visibility: visible;
+  justify-content: flex-start;
+  padding: var(--s-8) 0;
+  border-top: 1px solid var(--c-border);
+}
+
+html:not(.js-pins) .journey-map { display: none; }
 
 /* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion: reduce) {
@@ -1903,7 +1963,6 @@ section {
     scroll-behavior: auto !important;
   }
 
-  .urgency-dot { animation: none; }
   .marquee-track { animation: none; }
 }
 
@@ -1971,6 +2030,7 @@ section {
 }
 
 .brief-field input,
+.brief-field textarea,
 .brief-field select {
   font-family: var(--f-sans);
   font-size: var(--t-base);
@@ -1990,7 +2050,14 @@ section {
   padding-right: var(--s-10);
 }
 
+.brief-field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
 .brief-field input:focus,
+.brief-field textarea:focus,
 .brief-field select:focus {
   outline: 2px solid var(--c-ink);
   outline-offset: 1px;
