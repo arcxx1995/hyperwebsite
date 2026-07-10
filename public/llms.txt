@@ -8,4 +8,7 @@
 - [Vibe Coding Agency](https://hyperspark.studio/vibe-coding-agency): What a vibe coding agency is, and how Hyperspark ships production-grade software with AI coding tools.
 - [CTO for Hire](https://hyperspark.studio/cto-for-hire): Fractional CTO engagements — technical leadership plus a senior build team in one engagement.
 - [Build an MVP](https://hyperspark.studio/build-mvp): MVP development for startups — scoping, timelines, cost, and what an MVP should include.
+- [AI App Development](https://hyperspark.studio/ai-app-development): Building AI-native apps — chatbots, copilots, agents, RAG, and LLM products — from idea to production.
+- [SaaS Development](https://hyperspark.studio/saas-development): Building SaaS MVPs and platforms — auth, billing, multi-tenancy, dashboards — that can charge money from launch.
+- [Fix AI-Generated Code](https://hyperspark.studio/fix-ai-generated-code): Rescuing stalled Lovable, Bolt, v0, and Cursor codebases — audit, security, architecture repair, ship to production.
 - [Start a Build](https://hyperspark.studio/start): The five-question product brief form to start working with Hyperspark Studio.

@@ -2,6 +2,16 @@
 @import '@fontsource-variable/geist/wght.css';
 @import '@fontsource-variable/geist-mono/wght.css';
 
+/* Geist Pixel — display face (Vercel Geist Pixel, Square element shape).
+   Self-hosted, subset to Latin + digits + punctuation (~12KB). Impact only. */
+@font-face {
+  font-family: 'Geist Pixel';
+  src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
 /* ── SECTION CONFIG ── */
 @import './honest.config.css';
 
@@ -32,6 +42,7 @@
   /* Typography */
   --f-mono: 'Geist Mono Variable', 'Courier New', monospace;
   --f-sans: 'Geist Variable', -apple-system, system-ui, sans-serif;
+  --f-pixel: 'Geist Pixel', 'Geist Mono Variable', monospace;
 
   /* Type scale */
   --t-xs:      0.6875rem;
@@ -2124,4 +2135,182 @@ html:not(.js-pins) .journey-map { display: none; }
 
 .landing-services {
   max-width: 68ch;
+}
+
+/* ═══════════════════════════════════════════════
+   PREMIUM ELEVATION — Geist Pixel display + craft
+   ═══════════════════════════════════════════════ */
+
+/* ── PIXEL DISPLAY ──
+   Geist Pixel on display type + numerals + wordmark. Pixel metrics need
+   positive tracking and extra leading; the base mono headings use tight
+   negative tracking, so every pixel target is retuned below. */
+.nav-logo,
+.footer-brand .nav-logo,
+.brief-logo,
+.hero h1,
+.honest-text,
+.section-header h2,
+.slide-title,
+.journey-card-title,
+.engagement-scope,
+.reality-heading,
+.final-cta h2,
+.audience-heading-col h2,
+.journey-left h2,
+.stat-value,
+.honest-num {
+  font-family: var(--f-pixel);
+}
+
+.nav-logo { letter-spacing: 0.02em; }
+.hero h1 { letter-spacing: 0.01em; line-height: 1.12; }
+.hero h1 em { font-style: normal; letter-spacing: 0.01em; }
+.section-header h2 { letter-spacing: 0.005em; line-height: 1.14; }
+.honest-text { letter-spacing: 0.02em; }
+.slide-title { letter-spacing: 0.01em; line-height: 1.12; }
+.journey-card-title { letter-spacing: 0.01em; line-height: 1.14; }
+.engagement-scope { letter-spacing: 0.01em; line-height: 1.12; }
+.reality-heading { letter-spacing: 0.01em; line-height: 1.08; }
+.final-cta h2 { letter-spacing: 0.01em; line-height: 1.14; }
+.stat-value { letter-spacing: 0.01em; }
+.honest-num { letter-spacing: 0.01em; }
+
+/* Constrained pinned columns: pixel advance is wider than mono — cap size so
+   headings never overflow the narrow absolute columns. */
+.audience-heading-col h2 { font-size: clamp(1.3rem, 2.6vw, 2rem); letter-spacing: 0.005em; line-height: 1.16; }
+.journey-left h2 { font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: 0; line-height: 1.06; }
+
+/* Branded eyebrows/labels in pixel (functional UI text stays mono for legibility) */
+.marquee-label,
+.slide-help-label,
+.pricing-label,
+.reality-cat,
+.journey-card-wk,
+.journey-card-phase,
+.footer-col h5,
+.hero-badge span:first-child {
+  font-family: var(--f-pixel);
+  letter-spacing: 0.09em;
+}
+
+/* ── SUBTLE GRAIN (dark-native texture, static) ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── FOCUS: brand ring on every interactive element ── */
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── BUTTONS: spring + pressed feedback ── */
+.btn {
+  transition: background 150ms var(--ease-out),
+              border-color 150ms var(--ease-out),
+              color 150ms var(--ease-out),
+              transform 240ms var(--ease-out-expo),
+              box-shadow 240ms var(--ease-out-expo);
+}
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn-primary:hover { box-shadow: 0 8px 24px oklch(0.78 0.17 58 / 0.22); } /* feedback only, not a resting glow */
+
+/* ── NAV: animated underline + active-section ── */
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -5px;
+  height: 1.5px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms var(--ease-out-expo);
+}
+.nav-links a:hover::after,
+.nav-links a.is-active::after { transform: scaleX(1); }
+.nav-links a.is-active { color: var(--c-ink); }
+
+/* ── CARDS: one hover language across the set ── */
+.build-item,
+.mentor-card,
+.testimonial-card,
+.pricing-box {
+  transition: border-color 240ms var(--ease-out),
+              background 240ms var(--ease-out),
+              transform 240ms var(--ease-out-expo),
+              box-shadow 240ms var(--ease-out-expo);
+}
+.build-item:hover,
+.mentor-card:hover,
+.testimonial-card:hover,
+.pricing-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px oklch(0 0 0 / 0.35);
+}
+.testimonial-card:hover,
+.pricing-box:hover {
+  border-color: var(--c-border-hi);
+  background: oklch(0.96 0.004 270 / 0.06);
+}
+
+/* ── HERO PARALLAX PLANES ── */
+.hero > .container { z-index: 3; } /* content is the front plane, above grid/echo */
+
+.hero-grid {
+  position: absolute;
+  inset: -12% -6%;
+  z-index: 2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(oklch(0.96 0.004 270 / 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.96 0.004 270 / 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(120% 88% at 50% 42%, #000 38%, transparent 78%);
+          mask-image: radial-gradient(120% 88% at 50% 42%, #000 38%, transparent 78%);
+  will-change: transform;
+}
+
+.hero-echo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
+}
+.hero-echo span {
+  font-family: var(--f-pixel);
+  font-size: clamp(7rem, 26vw, 22rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: oklch(0.96 0.004 270 / 0.045);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.hero-content { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { display: none; }
+  .hero-grid, .hero-echo, .hero-content { will-change: auto; transform: none !important; }
+}
+
+@media (max-width: 768px) {
+  /* Pixel echo dominates small screens — pull it back */
+  .hero-echo span { font-size: clamp(6rem, 40vw, 12rem); }
 }

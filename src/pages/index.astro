@@ -177,6 +177,8 @@ const weeks = [
     <source src="/hero-vid.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-echo" aria-hidden="true"><span>&gt;_</span></div>
   <div class="container">
     <div class="hero-content">
       <div class="hero-badge">
@@ -201,17 +203,17 @@ const weeks = [
 
       <div class="hero-stats" role="list" aria-label="Studio highlights">
         <div class="stat" role="listitem">
-          <span class="stat-value">3Mn+</span>
+          <span class="stat-value" data-count="3" data-suffix="Mn+">3Mn+</span>
           <span class="stat-label">Users Reached</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat" role="listitem">
-          <span class="stat-value">10Mn+</span>
+          <span class="stat-value" data-count="10" data-suffix="Mn+">10Mn+</span>
           <span class="stat-label">Revenue Generated</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat" role="listitem">
-          <span class="stat-value">26+</span>
+          <span class="stat-value" data-count="26" data-suffix="+">26+</span>
           <span class="stat-label">Apps Worked On</span>
         </div>
       </div>
@@ -358,17 +360,17 @@ const weeks = [
     <!-- Big stats strip -->
     <div class="honest-stats">
       <div class="honest-stat">
-        <span class="honest-num">3<span class="honest-num-suffix">Mn+</span></span>
+        <span class="honest-num" data-count="3">3<span class="honest-num-suffix">Mn+</span></span>
         <span class="honest-stat-desc">Users reached by products and software our engineers have worked on</span>
       </div>
       <div class="honest-stat-rule" aria-hidden="true"></div>
       <div class="honest-stat">
-        <span class="honest-num">10<span class="honest-num-suffix">Mn+</span></span>
+        <span class="honest-num" data-count="10">10<span class="honest-num-suffix">Mn+</span></span>
         <span class="honest-stat-desc">Revenue generated across apps, product launches, and software systems</span>
       </div>
       <div class="honest-stat-rule" aria-hidden="true"></div>
       <div class="honest-stat">
-        <span class="honest-num">26<span class="honest-num-suffix">+</span></span>
+        <span class="honest-num" data-count="26">26<span class="honest-num-suffix">+</span></span>
         <span class="honest-stat-desc">Apps our engineers have worked on across product, launch, growth, and scale</span>
       </div>
     </div>
@@ -925,6 +927,9 @@ const weeks = [
           <li><a href="/vibe-coding-agency">Vibe Coding Agency</a></li>
           <li><a href="/cto-for-hire">CTO for Hire</a></li>
           <li><a href="/build-mvp">MVP Development</a></li>
+          <li><a href="/ai-app-development">AI App Development</a></li>
+          <li><a href="/saas-development">SaaS Development</a></li>
+          <li><a href="/fix-ai-generated-code">Fix AI-Generated Code</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -981,11 +986,61 @@ const weeks = [
     .from('.hero-ctas',   { y: 16,  opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4')
     .from('.hero-stats > *', { opacity: 0, y: 8, duration: 0.5, stagger: 0.09, ease: 'power2.out' }, '-=0.3');
 
-  // ── HERO PARALLAX ──
-  gsap.to('.hero-content', {
-    y: -70,
-    ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+  // ── HERO: MULTI-LAYER PARALLAX (flagship) ──
+  // Four depth planes scrubbed at different rates while the hero pins, then
+  // releases cleanly into the marquee. Desktop + motion only (usePins); mobile
+  // and reduced-motion get the static, well-composed layout the CSS already ships.
+  if (usePins) {
+    const heroP = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: '+=65%',
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+      },
+    });
+    heroP
+      .to('.hero-video',   { yPercent: 14, scale: 1.12, ease: 'none' }, 0) // back plane
+      .to('.hero-grid',    { yPercent: -8,  ease: 'none' }, 0)             // mid-back
+      .to('.hero-echo',    { yPercent: -20, ease: 'none' }, 0)            // mid (pixel watermark)
+      .to('.hero-content', { yPercent: -34, autoAlpha: 0.3, ease: 'none' }, 0); // foreground type
+  }
+
+  // ── COUNT-UP NUMERALS ──
+  function countUp(el: HTMLElement) {
+    const target = parseFloat(el.dataset.count || '0');
+    if (!target) return;
+    const suffixEl = el.querySelector('.honest-num-suffix');
+    const suffix = el.dataset.suffix || '';
+    const setNum = suffixEl
+      ? (n: number) => { if (el.firstChild) el.firstChild.nodeValue = String(n); }
+      : (n: number) => { el.textContent = n + suffix; };
+    if (reducedMotion) { return; } // markup already shows the final value
+    setNum(0);
+    const proxy = { v: 0 };
+    gsap.to(proxy, {
+      v: target, duration: 1.4, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+      onUpdate: () => setNum(Math.round(proxy.v)),
+      onComplete: () => setNum(target),
+    });
+  }
+  gsap.utils.toArray<HTMLElement>('.stat-value, .honest-num').forEach(countUp);
+
+  // ── NAV ACTIVE SECTION ──
+  gsap.utils.toArray<HTMLAnchorElement>('.nav-links a').forEach((link) => {
+    const id = link.getAttribute('href');
+    if (!id || !id.startsWith('#')) return;
+    const sec = document.querySelector(id);
+    if (!sec) return;
+    ScrollTrigger.create({
+      trigger: sec,
+      start: 'top 40%',
+      end: 'bottom 40%',
+      onToggle: (self) => link.classList.toggle('is-active', self.isActive),
+    });
   });
 
   // ── SECTION HEADERS ──
