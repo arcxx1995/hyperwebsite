@@ -1,15 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="18" fill="#130b22"/>
-  <rect x="1.5" y="1.5" width="61" height="61" rx="16.5" stroke="#f4f1ff" stroke-opacity="0.18" stroke-width="3"/>
+  <rect width="64" height="64" rx="18" fill="oklch(0.42 0.20 270)"/>
   <text
     x="50%"
     y="52%"
     fill="#f4f1ff"
     font-family="'Geist Mono Variable', 'Courier New', monospace"
-    font-size="28"
+    font-size="40"
     font-weight="700"
-    letter-spacing="-1"
     text-anchor="middle"
     dominant-baseline="middle"
-  >&gt;h</text>
+  >&gt;</text>
 </svg>
