@@ -1718,6 +1718,14 @@ section {
 @media (max-width: 768px) {
   .nav-links { display: none; }
 
+  /* nav-inner (logo + burger + CTA + 32px gaps) is wider than small viewports; compact it */
+  .nav-inner { gap: var(--s-3); }
+  .nav-logo { font-size: var(--t-base); }
+  .nav-cta { font-size: var(--t-xs); padding: var(--s-3) var(--s-4); }
+
+  .hero-badge { flex-wrap: wrap; justify-content: center; }
+  .hero h1 { font-size: clamp(2rem, 8.5vw, 2.75rem); }
+
   .pricing-grid { grid-template-columns: 1fr; }
   .landing-benefits-grid { grid-template-columns: 1fr; }
 
@@ -1798,7 +1806,6 @@ section {
   .audience-heading-col h2 { font-size: clamp(1.75rem, 6vw, 2.2rem); }
   .journey-left h2 { font-size: clamp(1.75rem, 6vw, 2.4rem); }
   .journey-card-title { font-size: clamp(1.5rem, 6.5vw, 2rem); }
-  .industry-row { grid-template-columns: 1fr; gap: var(--s-1); }
 }
 
 @media (max-width: 480px) {
@@ -1891,6 +1898,11 @@ section {
   color: var(--c-ink-dim);
   line-height: 1.6;
   max-width: 64ch;
+}
+
+/* must live after the .industry-row base rules above to win the cascade */
+@media (max-width: 768px) {
+  .industry-row { grid-template-columns: 1fr; gap: var(--s-1); }
 }
 
 /* ── PIN FALLBACK ──
